@@ -1,0 +1,64 @@
+{% for message in app.flashes('error') %}
+    <div class="errorsFlash">
+        {{ message }}
+    </div>
+{% endfor %}
+
+{{ form_start(form) }}
+
+<div class="epargne">
+
+    <!-- A combien estimez vous votre epargne ? -->
+    <div id="epargne_montant" style="display: inherit;">
+        <div class="question">{{ form_label(form.epargnes.montant)}} </div>
+        {{ form_widget(form.epargnes.montant)}}
+    </div>
+
+    <!-- Evisagez vous de mettre un apport dans un investissement -->
+    <div id="epargne_apport" style="display: none;">
+        <div class="question">{{ form_label(form.epargnes.has_apport)}} </div>
+        {{ form_widget(form.epargnes.has_apport)}}
+        <!-- Combien apporteriez-vous ? -->
+        <div id="apport" style="display: none;">
+            <div class="question">{{ form_label(form.epargnes.apport)}} </div>
+            {{ form_widget(form.epargnes.apport)}}
+        </div>
+    </div>
+
+    <div id="epargne_has_reductionImpot" style="display: none;">
+        <!-- Avez vous déjà des réductions d'impots -->
+        <div class="question">{{ form_label(form.epargnes.has_reductionImpot)}} </div>
+        {{ form_widget(form.epargnes.has_reductionImpot)}}
+
+        <!-- De combien réduisez vous votre impôt par an ? -->
+        <div id="reduction" style="display: none;">
+            <div class="question">{{ form_label(form.epargnes.reductionImpot)}} </div>
+            {{ form_widget(form.epargnes.reductionImpot)}}
+        </div>
+    </div>
+
+
+    <!-- Bouton suivant -->
+    <div id="step"> <!-- Permet de valider le formulaire -->
+        <a class="previous" id="previousPatrimoine" style="text-decoration: none; display: initial;" href="{{ path('patrimoines_new') }}"><i class='fas fa-arrow-left' ></i> Patrimoine</a> <!-- Retour sur la page situation -->
+        <a class="previous" id="previous" onclick="back()" style="display:none;">Retour</a>
+        <a class="next" onclick="steps()">Suivant</a>
+    </div>
+
+    <!-- Bouton suivant -->
+    <div id="button" style="display: none;"> <!-- Permet de valider le formulaire -->
+        <button class="next">{{ button_label|default('Objectifs') }} <i class='fas fa-arrow-right'></i></button>
+    </div>
+
+
+</div>
+
+
+{{ form_end(form) }}
+
+
+<script>
+
+    document.getElementById("progress").style.width = "58.31%";
+
+</script>

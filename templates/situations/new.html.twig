@@ -1,0 +1,27 @@
+{% extends 'simulation/simulation.html.twig' %}
+
+{% form_theme form _self %}
+
+ {% block Situation %}<li class="active">Situation</li> {% endblock %}
+
+
+{% block body %}
+    <!-- Titre du formulaire -->
+    <div class="content-form">
+        {{ include('situations/_form.html.twig') }}
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script src="{{ asset('javascript/form/situations/step.js') }}"></script>
+{% endblock %}
+
+
+{% block form_errors %}
+    {{ include('form/errors.html.twig') }}
+{% endblock %}
+
+
+
+
+

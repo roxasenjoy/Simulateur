@@ -1,0 +1,53 @@
+/*
+A quoi sert ce code ?
+- Créer des boutons sans le moindre problème.
+
+Comment s'en servir ?
+- Il faut créer une liste 2D (Exemple si dessous).
+- Dans cette liste 2D, vous allez ajouter les TRUE d'un côté et les FALSE de l'autre.
+- Il suffit que d'un seul appel à ce code pour créer le nombre voulu de bouton.
+
+Ce que vous devez avoir au préalable ?
+ - Un label qui constituent le message
+ - Une div TRUE-nomdelasection
+    - Un input avec une class true-nomdelasection
+ - Une div FALSE-nomdelasection
+    - Un input avec une class false-nomdelasection
+
+ - Une div à afficher/cacher
+
+Exemple :
+     Affichage des credits
+    <label> Avez-vous des crédits? (Autres qu'immobilier)</label>
+    <div class="true-credit">
+        <input class="true-credit" type="radio" name="credit">
+        <label class="label"> Oui </label>
+    </div>
+
+    <div class="false-credit">
+        <input type="radio" name="credit">
+        <label class="label" > Non </label>
+    </div>
+
+    <div class="credit" style="display: none;">
+        <h1>  réussi </h1>
+    </div>
+
+let list = [["true-enfant", "true-pension"], ["false-enfant","false-pension"] ];
+
+*/
+$(document).ready(function() {
+        for(let i=0; i<list.length; i++){
+            for (let y=0; y<list[i].length; y++){
+                $("." + list[i][y]).change(function() {
+                    if($("." + list[i][y]).is(':checked')){ /* Vérifie si la case est cochée */
+                        let value = list[i][y].substr(5); /* Enleve le true- */
+                        $('.'+ value).show();
+                    }else{
+                        let value = list[i][y].substr(6); /* Enleve le false- */
+                        $('.'+ value).hide();
+                    }
+                });
+            }
+        }
+});

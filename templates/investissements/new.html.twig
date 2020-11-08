@@ -1,0 +1,15 @@
+{% extends 'simulation/simulation.html.twig' %}
+
+{% block title %}New Investissements{% endblock %}
+
+{% block body %}
+
+    {{ include('investissements/_form.html.twig') }}
+
+    <a href="{{ path('investissements_index') }}">back to list</a>
+{% endblock %}
+
+{% block form_errors %}
+    {{ include('form/errors.html.twig') }}
+{% endblock %}
+

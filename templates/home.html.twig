@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+    {% block head %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SimulInvest</title>
+        <link rel="stylesheet" type="text/css" href="css/home.css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+        <!-- JQUERY -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Link Swiper's CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    {% endblock %}
+
+
+
+
+
+
+</head>
+
+{% block content %}
+<body>
+
+        <!-- DÉBUT | HEADER -->
+        <header>
+            <img src="images/home/header/logo.svg">
+            <div class="menu-toggle"></div>
+            <nav>
+                <ul>
+                    <li class="li"><a href="#about">A PROPOS</a></li>
+                    <li class="li"><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- FIN | HEADER -->
+
+
+        <!-- DÉBUT | Présentation du site internet -->
+        <div class="all_virtual_assistant">
+
+            <!-- Image - Partie de droite -->
+            <div class="image_virtual_assistant">
+                <img id="image_accueil" src="{{ asset('images/home/assitant virtuel/image_accueil.png') }}">
+                <img id="fond_image_accueil" src="{{ asset('images/home/assitant virtuel/Forme1.svg') }}">
+            </div>
+
+            <!-- Texte - Partie de gauche -->
+            <div class="texte_virtual_assitant">
+                <h1>L'ASSISTANT VIRTUEL POUR INVESTIR DANS L'IMMOBILIER LOCATIF</h1>
+                <p id="marketing_text">Il existe énormément de stratégies différentes pour investir dans l’immobilier.<br>
+                    Découvrez SimulHome l'assistant virtuel qui vous donnera en quelques minutes une étude sur-mesure de votre situation. </p>
+
+                <div class="start_simulation">
+                    <a href="{{ path('situations_new') }}" class="button"> COMMENCER MA SIMULATION </a>
+                </div>
+            </div>
+
+            <!-- Image - Partie de droite -->
+            <div class="image_virtual_assistant_responsive">
+                <img id="image_accueil" src="{{ asset('images/home/assitant virtuel/image_accueil.png') }}">
+                <img id="fond_image_accueil" src="{{ asset('images/home/assitant virtuel/forme1_telephone.svg') }}">
+            </div>
+
+        </div>
+        <!-- FIN | Présentation du site internet -->
+
+        <div class="clearfix"></div>
+
+        <!-- DÉBUT | Explication assistant virtuel -->
+        <div class="content_virtual_assitant"> <!-- Toutes la section -->
+
+            <!-- Titre de la section -->
+            <h1 class="step_virtual_assistant">une démarche en 3 étapes</h1>
+
+            <div class="section"> <!-- Les 3 parties -->
+                <div class="block"> <!-- Première partie -->
+                    <img src="images/home/assitant%20virtuel/1.svg"> <!-- Image -->
+                    <p> "Je souhaite investir, mais il existe de nombreuses méthodes et je m'y perds." </p> <!-- Texte -->
+                </div>
+
+                <div class="second secondBlock">
+                    <div class="block">  <!-- Deuxième partie -->
+                        <img src="images/home/assitant%20virtuel/2.svg"> <!-- Image -->
+                        <p id="text"> "J'ai découvert SimulInvest et j'ai été guidé étape par étape pour obtenir la solution qui correspond à ma situation." </p> <!-- Texte -->
+                    </div>
+                </div>
+
+
+                <div class="block"> <!-- Troisième partie -->
+                    <img src="images/home/assitant%20virtuel/3.svg"> <!-- Image -->
+                    <p> "En quelques minutes, l'assistant virtuelle a éclairci mon projet."</p> <!-- Texte -->
+
+                </div>
+            </div>
+        </div>
+        <!-- FIN | Explication assistant virtuel -->
+
+
+        <!-- DÉBUT | Pourquoi Simulome ?  -->
+        <div class="why_simulhome"> <!-- Toute la section -->
+            <div class="waves"> <!-- Vague à gauche -->
+                <img src="images/home/pourquoi%20simulhome/waves.png">
+            </div>
+
+            <div class="content" > <!-- Content à droite -->
+                <div class="left">
+                    <div class="description">
+                        <h1> POURQUOI SIMULINVEST ? </h1>
+                        <p> SimulInvest est un assistant virtuel pour investir dans l’immobilier locatif. En répondant aux questions du simulateur accédez à une étude sur mesure de votre projet.</p>
+                    </div>
+                    <div class="section">
+                        <!-- Swiper -->
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="cube">
+                                        <span class="icon icon-tresorie"></span>
+                                        <p>Prévoir les flux de ma trésorerie</p>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="cube">
+                                        <span class="icon icon-strategie"></span>
+                                        <p>Obtenir les stratégies d’investissement adaptées à ma situation</p>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="cube">
+                                        <span class="icon icon-rendement"></span>
+                                        <p>Simuler la rentabilité de mon projet</p>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="cube">
+                                        <span class="icon icon-budget"></span>
+                                        <p>Connaitre mon budget idéal d’investissement</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination"></div>
+
+                        </div> <!-- End swiper -->
+                    </div>
+                </div>
+                <div class="right"> <!-- Illustration -->
+                    <IMG src="images/home/pourquoi simulhome/personnage pourquoi simulhome.png">
+                </div>
+            </div>
+        </div>
+
+        <!-- FIN | Pourquoi Simulome ?  -->
+
+        <!-- DÉBUT | COMMENT REALISER MON INVESTISSEMENT LOCATIF ? -->
+        <div class="content_invest">
+            <div class="right">
+                <h1>INVESTISSEMENT LOCATIF, COMMENT LE REALISER ?</h1>
+                <p>
+                    Nos experts en stratégie d'investissement sont disponibles pour analyser et vous expliquer les résultats de votre simulation.
+                    Ensemble, trouvons le bien idéal pour votre investissement locatif.
+                    <br>Alors n’hésitez donc surtout pas à les solliciter !
+                </p>
+                <a href="{{ path('situations_new') }}" class="button"> FAIRE MA SIMULATION </a>
+            </div>
+
+            <div class="left">
+                <img src="images/home/investissement/personnage5.svg">
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <!-- FIN | COMMENT REALISER MON INVESTISSEMENT LOCATIF ? -->
+
+        <!-- DÉBUT | POURQUOI INVESTIR DANS L'IMMOBILIER ? -->
+        <div class="why_invest">
+            <div class="left">
+                <div class="content">
+                    <div class="title">
+                        <h1> POURQUOI INVESTIR DANS L'IMMOBILIER ? </h1>
+                    </div>
+                    <div class="section">
+
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="block">
+                                        <span class="icon icon-epargne"></span>
+                                        <p>Augmenter le rendement de votre épargne</p>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="block">
+                                        <span class="icon icon-fiscalite"></span>
+                                        <p>Diminuer votre fiscalité</p>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="block">
+                                        <span class="icon icon-retraite"></span>
+                                        <p>Assurer votre retraite ou l'avenir</p>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="block">
+                                        <span class="icon icon-transmission"></span>
+                                        <p>Transmettre à vos enfants</p>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="block">
+                                        <span class="icon icon-capital"></span>
+                                        <p>Former un capital</p>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="block">
+                                        <span class="icon icon-patrimoine"></span>
+                                        <p>Constituer un patrimoine</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="right">
+                <img src="images/home/pourquoi%20immobilier/personnage6.svg">
+            </div>
+            <div class="waves">
+                <img src="images/home/pourquoi%20immobilier/waves.png">
+            </div>
+        </div>
+        <!-- FIN | POURQUOI INVESTIR DANS L'IMMOBILIER ? -->
+
+        <!-- DÉBUT | QUI SOMMES-NOUS ?
+     -->
+        <div  class="content_about">
+            <div id="about" class="right">
+                <h1> A PROPOS DE NOUS</h1>
+                <p> SimulInvest est un acteur indépendant qui vous aide à optimiser vos investissements immobiliers.<br>
+                    Bénéficiez gratuitement des conseils d'un expert en immobilier locatif, qui analysera la simulation de votre projet.<br>
+                    De l'achat d'une résidence principal à la préparation de sa retraite, optimiser vos investissement grâce aux solutions sur mesure de nos conseillers.<br>
+                    <br>
+                    Nos principaux axes de travail :
+                </p>
+                <ul>
+                    <li> <span class="important_word"> Préparer </span> sa retraite</li>
+                    <li> <span class="important_word"> Diminuer </span> et optimiser sa fiscalité</li>
+                    <li> <span class="important_word"> Transmettre </span> son patrimoine</li>
+                    <li> <span class="important_word"> Augmenter </span> le rendement de son épargne</li>
+                    <li> <span class="important_word"> Protéger </span> sa famille via des assurances</li>
+                    <li> <span class="important_word"> Optimiser </span> l'achat de sa résidence principale</li>
+                </ul>
+            </div>
+
+            <div class="left">
+                <img src="images/home/about/personnage7.svg">
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+        <!-- FIN | QUI SOMMES-NOUS ? -->
+
+        <!-- DÉBUT | CONTACTEZ-NOUS -->
+        <div  class="contact">
+            <div id="contact" class="content">
+                <h1> CONTACTEZ-NOUS</h1>
+                <div class="form">
+                    {{ form_start(contactForm) }}
+                        {{ form_row(contactForm.firstname) }}
+                        {{ form_row(contactForm.lastname) }}
+                        {{ form_row(contactForm.email) }}
+                        {{ form_row(contactForm.object) }}
+                        {{ form_row(contactForm.message) }}
+                        <button class="submit" type="submit"> ENVOYER</button>
+                    {{ form_end(contactForm) }}
+
+
+
+                </div>
+
+            </div>
+        </div>
+        <!-- FIN | CONTACTEZ-NOUS -->
+
+
+        <!-- DÉBUT | FOOTER -->
+        <footer>
+            <div class="content_footer">
+                <p>
+                    ©2020 SIMULHOME, DORIC CAPITAL | PARTENAIRES | MENTIONS LÉGALES | DONNÉES PERSONNELLES |
+                    <a href="https://www.facebook.com/tristanhomehunters/reviews/?ref=page_internal" target="_blank"><img class="facebook" src="images/home/footer/logo_facebook.svg"></a>
+                    <a href="https://twitter.com/DORIC_GROUPE" target="_blank"><img class="twitter" src="images/home/footer/logo_twitter.svg"></a>
+                </p>
+            </div>
+        </footer>
+        <!-- FIN | FOOTER -->
+
+        <!-- Swiper JS -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+        <script>
+
+            /****************************** Slider ******************************************/
+
+
+        var swiper = new Swiper('.swiper-container', {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                slidesPerGroup: 1,
+                loop: true,
+                loopFillGroupWithBlank: false,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 2000,
+                    disableOnInteraction:false,
+                },
+
+                breakpoints:{
+                    850:{
+                        slidesPerView: 3,
+                        spaceBetween: 25
+                    }
+                }
+
+            });
+
+
+
+            /******************************** DÉBUT | Header  *******************************/
+            /*** Permet de dérouler le menu hamburger quand l'utilisateur est en version téléphone. ***/
+            $(document).ready(function(){
+               $('.menu-toggle').click(function(){
+                   $(this).toggleClass("active")
+                   $("nav").toggleClass("active")
+               });
+            });
+            /******************************** FIN | Header  *******************************/
+
+    </script>
+</body>
+
+{% endblock %}
+</html>
+
+
+
+
+

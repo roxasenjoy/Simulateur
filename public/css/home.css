@@ -1,0 +1,1112 @@
+html{
+    scroll-behavior: smooth;
+}
+
+:root{
+    --blue:red;
+}
+
+
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Light", "Roboto Thin", "Comic Sans MS", sans-serif;
+}
+
+/* Modification générale */
+    h1{
+        font-size: 40px;
+        color: #3476C2;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    p{
+        font-size: 25px;
+        font-family: "Roboto Light";
+        color: #3476C2;
+    }
+
+    .button{
+        color: white;
+        background-color:#3476C2;
+        padding: 15px 40px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .important_word{
+        color: #3476C2;
+        font-weight: 900;
+    }
+
+
+
+
+/*************************/
+
+
+/* DÉBUT | Header */
+header{
+    height: 120px;
+    box-sizing: border-box;
+    width: 50%;
+    float:left;
+}
+
+    header img{
+        width: 256px;
+        height: 100px;
+        float: left;
+        margin-top: 10px;
+        margin-left: 30px;
+    }
+
+    /* Naviguation */
+    .clearfix{
+        clear: both;
+    }
+
+
+nav{
+    float:right;
+}
+
+    nav ul{
+        margin:0;
+        padding: 0;
+        display: flex;
+    }
+
+        /* Mettre à la bonne taille A PROPOS et CONTACT par rapport à SIMULATION */
+        nav ul .li{
+            margin-top: 10px;
+        }
+
+        nav ul li {
+            list-style: none;
+            font-weight: 900;
+        }
+
+            nav ul li a{
+                display: block;
+                margin: 40px 57px 22px 0px;
+                text-decoration: none;
+                color:#3476C2;
+                font-size: 25px;
+                cursor:default;
+                scroll-behavior: smooth;
+            }
+
+            /* Design du bouton COMMENCER MA SIMULATION */
+            nav ul li #simulation{
+                color: white;
+                background-color:#3476C2;
+                padding: 10px 20px;
+                border-radius: 30px;
+            }
+
+
+
+/* DÉBUT | Présentation du site internet */
+
+    /* Image - Partie de droite */
+    .image_virtual_assistant_responsive{display: none;}
+
+    .image_virtual_assistant{
+        float: right;
+        width: 50%;
+        display: inherit;
+    }
+
+        #image_accueil {
+            position: absolute;
+            width: 35%;
+            margin-top: 6%;
+            margin-left: 10%;
+        }
+
+        #fond_image_accueil{
+            width: 100%;
+        }
+
+    /* Texte - Partie de gauche */
+    .texte_virtual_assitant{
+        width: 50%;
+        float: left;
+        margin: 10% 0 100px 0;
+    }
+
+
+        #marketing_text{
+            color:#3476C2;
+            width: 75%;
+            margin: 50px auto 75px auto;
+            font-family: "Roboto Light";
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+/************************************************/
+
+    /* DÉBUT | Explication assistant virtuel */
+    .content_virtual_assitant{
+        width: 100%;
+        height: auto;
+    }
+
+        .content_virtual_assitant .section{ /* Section qui comporte les 3 parties de l'explication */
+            height:auto;
+            overflow: hidden;
+            width: 100%;
+            margin:2px auto;
+            position: relative;
+            text-align:center;
+        }
+
+            .content_virtual_assitant .section .block,
+            .second{ /* Défini chaque block de la section (nb : 3) */
+                width: 400px;
+                height: 530px;
+                margin: 0px auto;
+                vertical-align:middle;
+                display:inline-block;
+                overflow: hidden;
+                position: relative;
+                text-align: justify;
+                text-justify: inter-word;
+            }
+
+/* Changement de la section 2*/
+    /* Ca permet d'avoir de l'espace entre les sections */
+    .second{
+        margin: 0px 5%;
+    }
+
+    #text{
+        margin: 10px auto 0px auto;
+    }
+
+        .content_virtual_assitant .section .block img{ /* Set des images */
+            width: 330px;
+            height: 375px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        .content_virtual_assitant .section .block p{ /* Set des textes */
+            color: #3476C2;
+            font-size: 20px;
+            text-align: center;
+            width: 90%;
+            margin: 20px auto 0px auto;
+        }
+
+/* FIN | Explication assitant virtuel */
+
+/* DÉBUT | Start button  */
+.start_simulation{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 75px;
+}
+
+
+/* FIN | Start button */
+
+/* DÉBUT | Pourquoi Simulome ?   */
+.why_simulhome{
+    background: #9dc5f2;
+    height: 850px;
+    width: 100%;
+}
+    /*waves*/
+    .why_simulhome .waves {
+        width: 10%;
+        float: left;
+
+    }
+
+        .why_simulhome .waves img{
+            height: 842px;
+            width: 100%;
+        }
+
+    .why_simulhome .content{
+        float: right;
+        width: 90%;
+    }
+
+    /* Changement du côté gauche */
+    .why_simulhome .content .left {
+        float: left;
+        width: 50%;
+    }
+
+        .why_simulhome .content .left .description{
+            color: white;
+            text-align: left;
+            font-weight: 500;
+        }
+
+            .why_simulhome .content .left .description h1{
+                font-size: 35px;
+                color: white;
+                text-align: left;
+            }
+
+            .why_simulhome .content .left .description p{
+                font-size: 25px;
+                color: white;
+                text-align: left;
+                width: 130%;
+            }
+
+        .why_simulhome .content .left .section{
+            text-align: center;
+            background: #9dc5f2;
+            margin-top: 10%;
+
+        }
+
+            /* Taille des carrés de fond */
+            .why_simulhome .content .left .section .cube{
+                width: 250px;
+                height: 350px;
+                text-align: center;
+                border-radius: 50px;
+
+            }
+
+                /* Image + Texte des les carrés */
+                .why_simulhome .content .left .section .cube p{
+                    color: #3476C2;
+                    font-size: 20px;
+                    margin: 75px 5px;
+                }
+
+                /* Taille + Couleur des icones */
+                .icon {
+                    display: inline-block;
+                    width: 125px;
+                    height: 125px;
+                    margin-top: 20px;
+                    background-size: cover;
+                    filter: invert(51%) sepia(13%) saturate(2842%) hue-rotate(173deg) brightness(80%) contrast(87%);
+                }
+
+                    .icon-tresorie {background-image: url("../images/home/pourquoi simulhome/flux_tresorerie.svg");}
+                    .icon-strategie {background-image: url("../images/home/pourquoi simulhome/graph_strategie.svg");}
+                    .icon-rendement {background-image: url("../images/home/pourquoi simulhome/simuler_rendement.svg");}
+                    .icon-budget {background-image: url("../images/home/pourquoi simulhome/budget.svg");}
+
+                .swiper-container {
+                    width: 100%;
+                    height: 100%;
+                }
+                .swiper-slide {
+                    text-align: center;
+                    font-size: 18px;
+                    background: #fff;
+                    border-radius: 25px;
+
+                    /* Center slide text vertically */
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: -webkit-flex;
+                    display: flex;
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                    -webkit-justify-content: center;
+                    justify-content: center;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    -webkit-align-items: center;
+                    align-items: center;
+                }
+
+    /* Changement du côté droit */
+    .why_simulhome .content .right{
+        float: right;
+        margin-top: 60px;
+        margin-right: 30px;
+    }
+
+        .why_simulhome .content .right img{
+            width: 100%;
+            max-width: 610px;
+            height: auto;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+/* FIN | Pourquoi Simulome ?   */
+
+/* DÉBUT | COMMENT REALISER MON INVESTISSEMENT LOCATIF ? */
+    .content_invest .left{
+        width: 40%;
+        height: auto;
+        text-align: center;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        float: left;
+    }
+
+        .content_invest .left img{
+            width: 500px;
+            height: auto;
+        }
+
+
+
+    .content_invest .right{
+        width: 50%;
+        float: right;
+        color:#3476C2;
+        margin-top: 10%;
+
+    }
+
+        .content_invest .right h1{
+            font-size: 35px;
+            text-align: left;
+        }
+
+        .content_invest .right p{
+            width: 90%;
+            font-weight: 100;
+            margin-bottom: 50px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+/* FIN | COMMENT REALISER MON INVESTISSEMENT LOCATIF ? */
+
+/* DÉBUT | POURQUOI INVESTIR DANS L'IMMOBILIER ?*/
+    .why_invest{
+        width: 100%;
+        background: #9dc5f2;
+    }
+
+        /*****************************
+                   Gauche
+       ******************************/
+        .why_invest .left{
+            background: #9dc5f2;
+            height: 750px;
+            width: 55%;
+            float:left;
+        }
+
+            .why_invest .left .content{
+                width: 85%;
+                margin: auto;
+            }
+
+                .why_invest .left .content .title{
+                    margin-top: 40px;
+                    text-align: center;
+                }
+
+                    .why_invest .left .content .title h1{ /* Titre de la partie */
+                        color: white;
+                        width: 100%;
+                    }
+
+                .why_invest .left .content .section{ /* La grande div qui représente tous les blocs*/
+                    width: 100%;
+                    height: auto;
+                    text-align: center;
+                    margin-top: 100px;
+                }
+
+                    .why_invest .left .content .section .border{ /* Bordures des blocks*/
+                        border-right: solid white 5px;
+                        margin-right: 30px;
+                    }
+
+                    .why_invest .left .content .section .block{ /* Création des blocks */
+                        width: 250px;
+                        height: 350px;
+                        background: white;
+                        border-radius: 50px;
+                    }
+
+                        .why_invest .left .content .section .block img{ /* Gestion de l'image */
+                            width: 100px;
+                            height: 100px;
+                            padding: 20px;
+                            padding-bottom: 0px;
+                        }
+
+                        .why_invest .left .content .section .block p{ /* Gestion du texte */
+                            color: #3476C2;
+                            font-size: 20px;
+                            margin: 75px 5px;
+                        }
+
+                        /* Liste des icons */
+                        .icon-epargne {background-image: url("../images/home/pourquoi immobilier/epargne.svg");}
+                        .icon-fiscalite {background-image: url("../images/home/pourquoi immobilier/fiscalité.svg");}
+                        .icon-retraite {background-image: url("../images/home/pourquoi immobilier/retraite.svg");}
+                        .icon-transmission {background-image: url("../images/home/pourquoi immobilier/transmission.svg");}
+                        .icon-capital {background-image: url("../images/home/pourquoi immobilier/capital.svg");}
+                        .icon-patrimoine {background-image: url("../images/home/pourquoi immobilier/patrimoine.svg");}
+
+
+
+        /*****************************
+                    DROITE
+        ******************************/
+
+        .why_invest .right{
+            background: #9dc5f2;
+            height: 750px;
+            width: 40%;
+            float: left;
+            text-align: center;
+        }
+
+            /* Partie du centre */
+            .why_invest .right img{
+                width: 60%;
+                height: 600px;
+                margin-top: 50px;
+            }
+
+        /*****************************
+                    WAVES
+        ******************************/
+
+        .why_invest .waves{
+            background: #9dc5f2;
+            height: 750px;
+            width: 5%;
+            float:right;
+        }
+
+            /* Partie de droite */
+            .why_invest .waves img{
+                width: 100%;
+                height: 750px;
+            }
+
+
+
+
+
+
+/* FIN | POURQUOI INVESTIR DANS L'IMMOBILIER ? */
+
+
+/* DÉBUT | QUI SOMMES-NOUS ? */
+    .content_about .left{
+        width: 40%;
+        height: auto;
+        text-align: center;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        float: left;
+    }
+
+        .content_about .left img{
+            width: 500px;
+            height: auto;
+        }
+
+    .content_about .right{
+        width: 50%;
+        float: right;
+        color:#3476C2;
+        margin-top: 2%;
+    }
+
+        .content_about .right h1{
+            font-size: 35px;
+        }
+
+        .content_about .right p{
+            font-size: 25px;
+
+        }
+
+            .content_about .right p ul{
+                font-size: 25px;
+                width: 90%;
+                font-weight: 100;
+            }
+
+                .content_about .right ul li{
+                    list-style-type: none;
+                    font-size: 25px;
+                    text-align: left;
+                }
+
+                .content_about .right ul li:before{
+                    content: "- ";
+                }
+/* FIN | QUI SOMMES-NOUS ? */
+
+    /* DÉBUT | Contact */
+    .contact{
+        background: #9dc5f2;
+        width: 100%;
+        height: 900px;
+    }
+
+        .contact .content{
+            width: 75%;
+            margin: auto;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+    .contact .content h1{
+        color: white;
+        font-size: 35px;
+        margin-bottom: 40px;
+    }
+
+            .contact .content .form .field, .textArea{
+                background: white;
+                height: 50px;
+                border-radius: 50px;
+                width: 65%;
+                margin: auto auto 30px auto;
+                border: solid 1px white;
+                padding-left: 20px;
+                font-size: 25px;
+                color: #7ECEFD;
+            }
+
+            .contact .content form div{
+                margin-right: 10px;
+            }
+
+                .textArea{
+                    height: 300px;
+                    padding-top: 10px;
+                    border-radius: 25px;
+                }
+
+    .contact .content .submit{
+        background:#3476C2;
+        color: white;
+        font-size: 20px;
+        padding: 12px 30px;
+        border-radius: 100px;
+        border: solid 1px #3476C2;
+        margin-top: 0px;
+    }
+
+    .textArea::placeholder,
+    .contact .content .form .field::placeholder{
+        color: #7ECEFD;
+    }
+
+/* FIN | Contact */
+
+
+/* DÉBUT | FOOTER */
+    footer{
+        width: 100%;
+        height: 75px;
+
+    }
+
+        footer .content_footer{
+            text-align: center;
+            max-height: 75px;
+            width: 80%;
+            margin: auto;
+        }
+
+            footer .content_footer p{
+                color: #9dc5f2;
+            }
+
+                footer .content_footer p a{
+                    width: 30px;
+                    height: 30px;
+                    vertical-align:text-top;
+                }
+
+                    footer .content_footer p a .twitter{
+                        margin-top: 2px;
+                    }
+/* FIN | FOOTER */
+
+/*******************************
+        RESPONSIVE 1400PX
+ ******************************/
+@media(max-width: 1450px){
+    /* Modification de la section du milieu pour un meilleur affichage*/
+    .content_virtual_assitant .section .second{
+        margin: 0px auto;
+    }
+
+    .why_simulhome .content .right img{
+        width: 95%;
+        max-width: 550px;
+    }
+}
+
+/*******************************
+        RESPONSIVE 1370px
+ *******************************/
+@media (max-width: 1370px){
+    /* ALL */
+    h1{
+        font-size: 25px;
+        color: #3476C2;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    p{font-size: 15px;}
+
+    .button{
+        padding: 10px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 15px;
+    }
+
+    /* Début / Header */
+    header{
+        width: 100%;
+        float: inherit;
+    }
+
+        .menu-toggle{
+            margin: 50px 20px 22px 0px;
+            display: block;
+            width: 40px;
+            height: 40px;
+            float:right;
+            cursor:pointer;
+            text-align: center;
+            background: white;
+        }
+
+            .menu-toggle:before{
+                content: '\f0c9';
+                color:#3476C2;
+                font-family: FontAwesome;
+                font-size: 25px;
+                background-color:white;
+            }
+
+            .menu-toggle.active:before{
+                content: '\f00d';
+                color:#3476C2;
+            }
+
+    nav{
+        display: none;
+        background-color:white;
+        border-top: solid 2px #3476C2;
+        border-bottom: solid 2px #3476C2;
+    }
+
+        nav.active{
+            display: block;
+            width: 100%;
+        }
+
+            nav.active ul {
+                display: block;
+                margin-left: 20px;
+
+            }
+
+
+            nav ul li {
+                list-style: none;
+                font-weight: 400;
+            }
+
+    nav ul li a{
+        margin: 20px 57px 22px 0px;
+    }
+    /* FIN | Header */
+
+    /* DÉBUT / Présentation du site internet */
+        /* Image - Partie de droite */
+
+        .image_virtual_assistant{display: none;}
+
+        .image_virtual_assistant_responsive{
+            float: right;
+            width: 75%;
+            display: inherit;
+        }
+
+            #image_accueil {
+                width: 50%;
+                margin-top: 2.5%;
+                margin-left: 20%;
+                overflow: hidden;
+            }
+
+            #fond_image_accueil{
+                width: 100%;
+            }
+
+        /* Texte - Partie de gauche */
+        .texte_virtual_assitant{
+            width: 100%;
+            margin:0 0;
+            float: left;
+        }
+
+            #marketing_text{
+                width: 90%;
+            }
+    /* FIN | Présentation */
+
+    /* DÉBUT | Assistant virtuel */
+    .content_virtual_assitant .section .block p{ /* Set du text en version responsive */
+        margin-left: 10px;
+    }
+
+        #text{ /*Petite modification pour que ça soit centré */
+            margin-left: 10px;
+        }
+
+    .content_virtual_assitant .section .block,
+    .second{ /* Défini chaque block de la section (nb : 3) */
+        width: 400px;
+        height: 460px;
+    }
+
+    .content_virtual_assitant .section .second{ /* Remplir la page quand on est en portable, ça évite un décallage immonde */
+        margin: 0px auto;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* FIN | Assistant virtuel */
+
+    /* DÉBUT | Pourquoi Simulome ?   */
+    .why_simulhome .waves {
+        display: none;
+    }
+
+    .why_simulhome .content{
+        width: 100%;
+    }
+
+        .why_simulhome .content .left{
+            width: 100%;
+        }
+
+            .why_simulhome .content .left .section{
+                padding-bottom: 40px;
+                width: 100%;
+                margin-top: 2%;
+            }
+
+            .why_simulhome .content .left .description{
+                text-align: center;
+            }
+
+                .why_simulhome .content .left .description h1{
+                    font-size: 25px;
+                    width: 90%;
+                    margin: 20px auto;
+
+                }
+                .why_simulhome .content .left .description p{
+                    width: 90%;
+                    margin: auto;
+                    margin-bottom: 20px;
+                }
+
+                .swiper-container {
+                    width: 85%;
+                    height: 100%;
+                }
+
+    .why_simulhome .content .right{
+        width: 100%;
+        text-align: center;
+        overflow: hidden;
+        margin-right: 0px;
+        margin-top: 0px;
+        background: #9dc5f2;
+    }
+
+        .why_simulhome .content .right img{
+            width: 315px;
+            height: auto;
+            overflow: hidden;
+            background: #9dc5f2;
+        }
+    /* FIN | Pourquoi Simulome ?   */
+
+    /* DÉBUT | COMMENT REALISER MON INVESTISSEMENT LOCATIF ? */
+    .content_invest .left{
+        width: 100%;
+        padding-bottom: 50px;
+
+    }
+
+        .content_invest .right{
+            width: 100%;
+            text-align: center;
+            margin-top: 2.5%;
+        }
+
+            .content_invest .right h1{
+                font-size: 25px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .content_invest .right p{
+                width: 90%;
+               margin :0 auto 35px auto;
+            }
+
+    .content_invest .left img{
+        width: 315px;
+        height: auto;
+        overflow: hidden;
+    }
+
+    /* FIN | COMMENT REALISER MON INVESTISSEMENT LOCATIF ? */
+
+    /* DÉBUT | POURQUOI INVESTIR DANS L'IMMOBILIER ?*/
+    .why_invest .left{
+        width: 100%;
+        height: auto;
+    }
+
+        .why_invest .left .content{
+            width: 100%;
+        }
+
+            .why_invest .left .content .section{
+                margin-top: 10px;
+            }
+
+                .why_invest .left .content .section .border{ /* Bordures des blocks*/
+                    border-right: solid white 5px;
+                    margin-right: 50px;
+                }
+
+
+    .why_invest .right{
+        width: 100%;
+        height: auto;
+    }
+
+        .why_invest .right img{
+            width: 350px;
+            height: auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            overflow: hidden;
+        }
+
+    .why_invest .waves{
+        display: none;
+    }
+
+
+    /* FIN | POURQUOI INVESTIR DANS L'IMMOBILIER ? */
+
+    /* DÉBUT | QUI SOMMES-NOUS ? */
+    .content_about .left{
+        width: 100%;
+        padding-bottom: 50px;
+    }
+
+        .content_about .left img{
+            width: 315px;
+            height: auto;
+            overflow: hidden;
+        }
+
+    .content_about .right{
+        width: 90%;
+        text-align: left;
+        margin-right: 5%;
+        font-size: 15px;
+    }
+
+        .content_about .right h1{
+            font-size: 25px;
+        }
+
+        .content_about .right p{
+            font-size: 15px;
+        }
+
+        .content_about .right ul li{
+            font-size: 15px;
+        }
+
+
+
+    /* FIN | QUI SOMMES-NOUS ?  */
+
+    /* DÉBUT | CONTACT */
+    .contact .content .form .field, .textArea{
+        width: 95%;
+    }
+    /* FIN | CONTACT */
+
+}
+
+/*******************************
+        RESPONSIVE 520px
+ *******************************/
+@media (max-width: 800px) {
+
+    /* Image + Texte des les carrés */
+    .why_simulhome .content .left .section .cube p{
+        color: #3476C2;
+        font-size: 15px;
+        margin: 50px 5px;
+    }
+
+    .swiper-container {
+        width: 65%;
+        height: 100%;
+    }
+
+    .why_simulhome .content .left .section .cube{
+        width: 350px;
+        height: 350px;
+        text-align: center;
+        border-radius: 50px;
+
+    }
+
+}
+
+
+/*******************************
+        RESPONSIVE 520px
+ *******************************/
+@media (max-width: 520px) {
+
+    /* ALL */
+    h1{
+        font-size: 25px;
+    }
+
+    p{
+        font-size: 15px;
+    }
+
+    /* DÉBUT | Présentation du site internet */
+        /* Image - Partie du dessous */
+
+        /* Texte - Partie d'en haut */
+        #marketing_text{
+            text-align: center;
+            margin: 35px auto 50px auto;
+        }
+
+
+    header img{
+        width: 200px;
+        height: 100px;
+        margin-top: 15px;
+    }
+
+    .button{
+        font-size: 16px;
+    }
+
+    .content_virtual_assitant .section .block img{
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+    }
+
+    .content_virtual_assitant .section .block p{
+        font-size: 16px;
+        width: 100%;
+        margin: auto;
+    }
+
+    .content_virtual_assitant .section .block,
+    .second{ /* Défini chaque block de la section (nb : 3) */
+        width: 200px;
+        height: 350px;
+    }
+
+    .content_virtual_assitant .section .second{
+        width: 200px;
+        height: 350px;
+    }
+
+    .content_virtual_assitant .section .block .second{
+        width: 200px;
+        height: 350px;
+        margin-bottom: 75px;
+    }
+
+    #text{
+        margin: initial;
+    }
+
+    .why_simulhome .content .left .description p{
+        font-size: 16px;
+        margin-bottom: 30px;
+        font-weight: 400;
+    }
+
+    .contact{
+        height: 650px;
+    }
+
+    .contact .content h1{
+        color: white;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .contact .content .form .field, .textArea{
+        background: white;
+        height: 25px;
+        border-radius: 25px;
+        width: 100%;
+        margin: auto auto 10px auto;
+        border: solid 1px white;
+        font-size: 16px;
+        color: #7ECEFD;
+        font-family: "Roboto Medium", "Roboto Light", sans-serif;
+    }
+
+    .textArea{
+        height: 300px;
+        padding-top: 10px;
+        border-radius: 25px;
+        color: #7ECEFD;
+    }
+
+    .contact .content .submit{
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+
+
+    .why_simulhome .content .right img,
+    .content_invest .left img,
+    .why_invest .right img,
+    .content_about .left img
+    {
+        width: 200px;
+    }
+
+}
+
+

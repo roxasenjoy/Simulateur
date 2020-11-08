@@ -1,0 +1,45 @@
+{% extends 'simulation/simulation.html.twig' %}
+
+{% block title %}Situations index{% endblock %}
+
+{% block body %}
+    <h1>Situations index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Famille</th>
+                <th>Naissance</th>
+                <th>Enfant</th>
+                <th>enfantFiscal</th>
+                <th>Pension</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for situation in situations %}
+            <tr>
+                <td>{{ situation.id }}</td>
+                <td>{{ situation.famille }}</td>
+                <td>{{ situation.naissance }}</td>
+                <td>{{ situation.enfant }}</td>
+                <td>{{ situation.enfantFiscal }}</td>
+                <td>{{ situation.pension }}</td>
+                <td>
+                    <a href="{{ path('situations_show', {'id': situation.id}) }}">show</a>
+                    <a href="{{ path('situations_edit', {'id': situation.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('situations_new') }}">Create new</a>
+{% endblock %}
+
+

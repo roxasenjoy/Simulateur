@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Credits{% endblock %}
+
+{% block body %}
+    <h1>Edit Credits</h1>
+
+    {{ include('credits/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('credits_index') }}">back to list</a>
+
+    {{ include('credits/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,58 @@
+<br>
+{% for message in app.flashes('error') %}
+    <div class="errorsFlash">
+        {{ message }}
+    </div>
+{% endfor %}
+
+{{ form_start(form) }}
+    <div class="content-form">
+        <div class="content-client">
+            <div class="left">
+                <img alt="image resultat" src="../../images/form/resultat/personnage_resultats.svg">
+            </div>
+            <div class="right">
+                <div class="right-content">
+                    <div class="resultat">
+                        <h2> VOS RÉSULTATS SONT PRÊTS </h2>
+                        <p> Finalisez votre inscription pour voir vos résultats personnalisés et profiter de nos conseils d'experts. </p>
+                    </div>
+                    <div class="form">
+                        <div class="field">
+                            {{ form_start(form) }}
+                            {{ form_row(form.nom) }}
+                            {{ form_row(form.prenom) }}
+                            {{ form_row(form.email) }}
+                            {{ form_row(form.codePostal) }}
+                            {{ form_row(form.telephone) }}
+                            {{ form_row(form.telephonePays) }}
+                            <div class="condGeneralesContent">
+                                {{ form_widget(form.condGenerales) }}
+                                {{ form_label(form.condGenerales) }}
+                            </div>
+                            {{ form_end(form) }}
+                        </div>
+                        <div class="image">
+                            <img src="../../images/form/resultat/cnil.jpg">
+                            <img src="../../images/form/resultat/rgpd.jpg">
+                        </div>
+                        <!-- Bouton suivant -->
+                        <div class="btn">
+                            <button class="btn-form">{{ button_label|default('VOIR MES RÉSULTATS') }}</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+    <script>
+        document.getElementById("progress").style.width = "100%";
+        document.getElementById("ariane").style.display = "none";
+        document.getElementById("content_progress_bar").style.display = "none";
+        document.getElementById("content").style.width = "100%";
+    </script>
+
+{{ form_end(form) }}

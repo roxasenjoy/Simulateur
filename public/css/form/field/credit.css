@@ -1,0 +1,120 @@
+/***************
+        INVESTISSEMENTS
+     ***************/
+
+.credit_input{
+    border: white solid 1px;
+    border-bottom: #3476C2 solid 1px;
+    width: 25%;
+    padding: 10px 20px;
+    font-size: 25px;
+    font-family: "Roboto Light", sans-serif;
+    color: #3476C2;
+    margin-bottom: 10px;
+}
+
+.credit_input::placeholder{
+    color: #3476C2;
+    opacity: 0.5;
+}
+
+.title_credit{
+    text-align: left;
+    width: 85%;
+    margin: 50px auto 0 auto;
+    padding-bottom: 40px;
+    border-bottom: rgba(97, 97, 97, .5) 1px solid ;
+}
+
+.title_credit strong{
+    font-size: 40px;
+    color: #3476C2;
+    text-align: left;
+    font-weight: bold;
+    font-family: "Roboto", "Roboto Light";
+}
+
+.title_credit label{
+    font-size: 30px;
+    color: #3476C2;
+    font-family: "Roboto Light", "Roboto Thin", sans-serif;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+
+/********
+Investissement -> Les champs
+ *******/
+.credits{
+    width: 85%;
+    border-bottom: rgba(97, 97, 97, .5) 1px solid ;
+    margin: auto;
+}
+
+.add_content{
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.add_content label{
+    font-size: 20px;
+    color: #3476C2;
+    font-weight: bold;
+    font-family: "Roboto", "Roboto Thin", "Roboto Light", sans-serif;
+}
+
+.credits input{
+    margin: 10px 40px;
+    width: 200px;
+}
+
+.credits button{
+    background-color: #3476C2; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.credits button i{
+    font-size: 25px;
+}
+
+@media (max-width: 1600px) {
+
+    .credits input{
+        margin: 10px 30px;
+        width: 200px;
+    }
+
+}
+
+@media (max-width: 1050px) {
+
+    .title_credit{
+        width: 95%;
+        text-align: center;
+    }
+
+    .title_credit strong{
+        font-size: 30px;
+    }
+    .title_credit label{
+        font-size: 25px;
+    }
+
+    .credits input{
+        width: 75%;
+    }
+
+    .add_content{
+        display: block;
+        margin-top: 20px;
+    }
+
+}

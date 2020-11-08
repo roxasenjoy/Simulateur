@@ -1,0 +1,469 @@
+/* Cacher les éléments précédents */
+.ariane, .content_progress_bar{
+    display: none;
+}
+
+/*********************************************
+        Couleur en fonction des réponses
+ *********************************************/
+.superieur{
+    color: #18bf85;
+}
+
+.inferieur{
+    color:#FF2D66;
+}
+
+/*********************************************
+        Bouton pour afficher les champs
+ *********************************************/
+
+
+
+
+/* Content de la page */
+.content{
+    width: 100%;
+    color: #3476C2;
+}
+
+/***********************
+       SITUATION
+ **********************/
+.situation, .resultats{
+    margin: auto;
+    width: 80%;
+    margin-top: 50px;
+}
+
+    /* Section du titre */
+    .title{
+        width: 100%;
+        margin: auto;
+    }
+
+        /* Titre */
+        .title h1{
+            font-size: 35px ;
+            font-family: "Roboto Medium", "Roboto Thin", sans-serif;
+            font-weight: initial;
+            margin-top: 20px;
+        }
+
+
+        /* Petite barre bleue en dessous du titre */
+        .title .title_separation{
+            width: 3.5%;
+            background: #3476C2;
+            padding: 2.5px;
+            border: #3476C2;
+        }
+
+    /* Contient tous les champs (DANS SITUATION) */
+    .situation ol{
+        width: 100%;
+        margin-top: 50px;
+    }
+
+        /* Contenant des champs */
+        .liste{
+            color: #3476C2;
+            margin-top: 40px;
+            opacity: 1;
+            font-size: 25px;
+            font-family: "Roboto Medium", "Roboto Thin", sans-serif;
+            border-bottom: rgba(52,118,194,0.5) solid 1px;
+            padding:10px;
+            margin-right: 100px;
+        }
+
+            /* Positionner le texte chacun de son côté */
+            .liste p:first-child{
+                float: left;
+            }
+
+            .liste p:nth-child(2){
+                text-align:right;
+            }
+
+/***********************
+        RESULTATS
+**********************/
+
+    /* Texte de présentation des résultats */
+    .resultats .content{
+        font-family: "Roboto Light", "Roboto Thin", "Comic Sans MS", sans-serif;
+        margin-top: 20px;
+    }
+
+        .resultats .content p{
+            font-size: 25px;
+        }
+
+        .resultats .content p:first-child{
+            margin-bottom: 20px;
+        }
+
+        .resultats .content p strong{
+            color: #3476C2;
+            font-weight: 800;
+        }
+
+
+    /* SECTION */
+    /* Création des sections */
+    .pinel, .LMNP, .demembrement{
+        border: 2px solid #3476C2;
+        border-left: 15px solid #3476C2;
+        padding: 10px;
+
+        display: flex;
+        flex-flow: row wrap;
+        margin-bottom: 25px;
+        text-align: center;
+
+        margin-top: 15px;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+
+    }
+
+    .bug2{
+        margin-right: 100px;
+    }
+
+    .bug1{
+        margin-right: 250px;
+    }
+
+    .pinel .content,
+    .LMNP .content,
+    .demembrement .content
+    {
+        display: flex;
+        justify-content: space-around;
+        flex-flow: row wrap;
+    }
+
+    .detailsContent{
+        width: 100%;
+        margin: 0 auto 50px auto;
+        text-align: left;
+    }
+
+    .details{
+        font-size: 25px;
+        border-bottom: 2px solid #3476C2;
+        padding: 10px;
+        margin-left: 10%;
+        cursor:pointer;
+        font-family: "Roboto Medium", "Roboto Thin", "Comic Sans MS", sans-serif;
+        text-align: center;
+        text-transform: uppercase;
+        color: #3476C2;
+        transition: all 1s ease;
+    }
+
+    .details:hover{
+        background-color: #3476C2;
+        color: white;
+        border-radius: 5px;
+    }
+
+    .pinel .value,
+    .LMNP .value,
+    .demembrement .value
+    {
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .pinel .content .title, .pinel .content .value,
+    .LMNP .content .title, .LMNP .content .value,
+    .demembrement .content .title, .demembrement .content .value
+    {
+        font-size: 30px;
+        font-family: "Roboto Medium", "Roboto", sans-serif, "Comic Sans MS";
+    }
+
+    .dropdown{
+        text-align: left;
+        animation: fadein 1s;
+        -moz-animation: fadein 1s; /* Firefox */
+        -webkit-animation: fadein 1s; /* Safari et Chrome */
+        -o-animation: fadein 1s; /* Opera */
+        }
+        @keyframes fadein {
+            from {
+                opacity:0;
+            }
+            to {
+                opacity:1;
+            }
+        }
+        @-moz-keyframes fadein { /* sur Firefox */
+            from {
+                opacity:0;
+            }
+            to {
+                opacity:1;
+            }
+        }
+        @-webkit-keyframes fadein { /* sur Safari et Chrome */
+            from {
+                opacity:0;
+            }
+            to {
+                opacity:1;
+            }
+        }
+        @-o-keyframes fadein { /* sur Opera */
+            from {
+                opacity:0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+    #dropdownDemembrement, #dropdownLMNP, #dropdownPinel{
+        display: none;
+    }
+
+
+
+    .description{
+        margin: auto;
+        width: 90%;
+    }
+
+        .description p{
+            font-size: 25px;
+            font-family: "Roboto Light", "Roboto Medium", "Roboto", sans-serif;
+        }
+
+    /************ SECTION INFORMATION ******************/
+    /* Section du titre */
+    .section_title{
+        width: 90%;
+        margin: 75px auto 0px auto;
+    }
+
+        /* Titre */
+        .section_title h1{
+            font-size: 35px ;
+            font-family: "Roboto Medium", "Roboto Thin", sans-serif;
+            font-weight: initial;
+        }
+
+    /* Contient tous les champs (DANS RESULTAT) */
+    .dropdown ol{
+        width: 85%;
+        margin: auto;
+        margin-top: 50px;
+    }
+
+        .resultats .financement{
+            color: #3476C2;
+            opacity: 1;
+            font-size: 20px;
+        }
+
+        .resultats .precision{
+            color: #3476C2;
+            opacity: 1;
+            font-size: 12px;
+        }
+
+        /* Contenant des champs */
+        .listeSection{
+            display: inherit;
+            color: #3476C2;
+            margin-top: 40px;
+            opacity: 1;
+            font-size: 25px;
+            font-family: "Roboto Medium", "Roboto Thin", sans-serif;
+            border-bottom: rgba(52,118,194,0.5) solid 1px;
+            padding:10px;
+            margin-right: 100px;
+        }
+
+            /* Positionner le texte chacun de son côté */
+            .listeSection p:first-child{float: left;}
+
+            .listeSection p:nth-child(2){text-align:right;}
+
+            .listeSection:last-child{margin-bottom: 50px;}
+
+            /* Petit champs en italique */
+            .italique{
+                font-style: italic;
+                font-size: 16px;
+            }
+
+        .financement{
+            font-size: 25px;
+            font-family: "Roboto Condensed Light";
+            width: 90%;
+            margin: 40px auto;
+        }
+
+@media (max-width: 1370px) {
+
+    /***********************
+            SITUATION
+     **********************/
+    .situation{
+        width: 95%;
+    }
+
+    /* Section du titre */
+    .title{
+        width: 100%;
+        margin: auto;
+        text-align: center;
+    }
+
+    /* Petite barre bleue en dessous du titre */
+    .title .title_separation{
+        margin:auto;
+        width: 50px;
+    }
+
+    .situation ol{
+        padding-left: 0px;
+    }
+
+    .liste{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    /***********************
+            RESULTATS
+     **********************/
+    .type, .budget_ideal, .score{
+        width: 100%;
+    }
+
+    .pinel .content .title,
+    .LMNP .content .title,
+    .demembrement .content .title
+    {
+        font-size: 25px;
+    }
+
+    .pinel .content  .type p:first-child,
+    .LMNP .content  .type p:first-child,
+    .demembrement .content  .type p:first-child{
+        font-size: 35px;
+    }
+
+    .pinel .content .value,
+    .LMNP .content .value,
+    .demembrement .content .value
+    {
+        font-size: 35px;
+    }
+
+    .details{
+        margin-left: 0%;
+    }
+
+    .detailsContent{
+        width: 100%;
+        margin: 0 auto 50px auto;
+        text-align: center;
+    }
+
+    .section_title h1{
+        text-align: center;
+    }
+
+    .dropdown ol{
+        width: 100%;
+        padding-left: 0px;
+    }
+
+    .listeSection{
+        margin-right: 40px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    /***********************
+            SITUATION
+     **********************/
+
+    /* Titre */
+    .pinel .content .type p:first-child{
+        font-size: 20px;
+    }
+    .liste{
+        font-size: 15px;
+    }
+
+    .resultats{
+        width: 100%;
+        margin: auto;
+    }
+
+    /***********************
+            RESULTATS
+    **********************/
+
+
+    .resultats .content p{
+        font-size: 15px;
+    }
+
+    .pinel .content .title,
+    .LMNP .content .title,
+    .demembrement .content .title
+    {
+        font-size: 15px;
+    }
+
+    .pinel .content .value,
+    .LMNP .content .value,
+    .demembrement .content .value
+    {
+        font-size: 20px;
+    }
+
+    .details{
+        font-size: 15px;
+    }
+
+    .title{
+        font-size: 20px !important;
+    }
+
+    .dropdown .description p{
+        font-size: 15px;
+    }
+
+    .section_title{
+        margin-top: 35px;
+    }
+
+    .section_title h1{
+        font-size: 20px;
+    }
+
+    .listeSection{
+        font-size: 13px;
+    }
+
+    .resultats li:before{
+        display: none;
+    }
+
+
+}
+
+
+
+
+

@@ -1,0 +1,16 @@
+[type="number"], [type="text"]{
+    border: white solid 1px;
+    border-bottom: #3476C2 solid 1px;
+    width: 75%;
+    padding: 10px 20px;
+    font-size: 25px;
+    font-family: "Roboto Light", sans-serif;
+    color: #3476C2;
+    margin-bottom: 20px;
+}
+
+[type="number"]::placeholder, [type="text"]::placeholder{
+    color: #3476C2;
+    opacity: 0.5;
+}
+

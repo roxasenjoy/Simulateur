@@ -1,0 +1,39 @@
+{% extends 'simulation/simulation.html.twig' %}
+
+{% block title %}Investissements index{% endblock %}
+
+{% block body %}
+    <h1>Investissements index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>investMontant</th>
+                <th>investDuree</th>
+                <th>investRente</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for investissement in investissements %}
+            <tr>
+                <td>{{ investissement.id }}</td>
+                <td>{{ investissement.investMontant }}</td>
+                <td>{{ investissement.investDuree }}</td>
+                <td>{{ investissement.investRente }}</td>
+                <td>
+                    <a href="{{ path('investissements_show', {'id': investissement.id}) }}">show</a>
+                    <a href="{{ path('investissements_edit', {'id': investissement.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('investissements_new') }}">Create new</a>
+{% endblock %}

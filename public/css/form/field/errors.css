@@ -1,0 +1,32 @@
+/**
+    Changement de style quand l'utilisateur se trompe concernant le formulaire.
+ */
+
+
+.errors{
+    list-style:none;
+    color:red;
+    visibility: initial;
+    display: initial;
+    text-transform: initial;
+    margin-left: 0;
+    position: initial;
+    opacity: initial;
+    font-size: 20px;
+}
+
+
+.errorsFlash{
+    background:	#F04333;
+    color: white;
+    padding: 20px;
+    width: 75%;
+    margin:auto;
+    font-size: 20px;
+    opacity: 0.9;
+    border-radius: 5px;
+}
+
+.field ul li{
+    display: none;
+}

@@ -1,0 +1,307 @@
+@font-face {
+    font-family: "Roboto Medium";
+    src: url("../../fonts/roboto/Roboto-Medium.ttf");
+}
+
+@font-face {
+    font-family: "Roboto Light";
+    src: url("../../fonts/roboto/Roboto-Light.ttf");
+}
+
+@font-face {
+    font-family: "Roboto Condensed Light";
+    src: url("../../fonts/roboto/Roboto-LightItalic.ttf");
+}
+
+
+:root{
+    --size: 20px;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    user-select: none; /* Propriété standard */
+}
+
+
+html {
+    overflow-y: scroll;
+    width: 100%;
+}
+
+    /* DÉBUT | Header */
+    header{
+        height: 120px;
+        box-sizing: border-box;
+        width: 100%;
+        margin:auto;
+        border-bottom: #3476C2 1px solid;
+        margin-bottom: 5px;
+
+    }
+
+        header img{
+            width: 376px;
+            height: 100px;
+            margin-top: 10px;
+            margin-left: 5%;
+        }
+    /* FIN | Header */
+
+    /***********************************************************
+        FORMULAIRE - Questions + Progress Bar - Partie Droite
+     ***********************************************************/
+    .content{
+        width: 75%;
+        height: auto;
+        float: right;
+    }
+
+    /* DÉBUT | Progress Bar */
+    .content_progress_bar{
+        width: 100%;
+        padding: 45px 0px;
+        background-color:white;
+    }
+
+        .progress_bar{
+            width: 75%; /* Taille de la progress bar */
+            height: 10px;
+            background-color:#9EC5F2;
+            border-radius: 30px;
+            padding: 2px;
+            margin:auto;
+        }
+
+            .progress{
+                height: 10px;
+                background-color: #3476C2;
+                border-radius: 30px;
+            }
+    /* FIN | Progress Bar */
+
+/* DÉBUT | FOOTER */
+    footer{
+        width: 100%;
+        height: 75px;
+    }
+
+        /* Footer */
+        footer .content_footer{
+            text-align: center;
+            max-height: 75px;
+            width: 80%;
+            margin: auto;
+        }
+
+            /* Texte du footer */
+            footer .content_footer p{
+                color: #9dc5f2;
+                font-size: 20px;
+            }
+
+                /* Lien des réseaux sociaux */
+                footer .content_footer p a{
+                    width: 30px;
+                    height: 30px;
+                    vertical-align:text-top;
+                }
+
+                    /* Twitter et Facebook */
+                    .twitter img, .facebook img{
+                        width: 20px;
+                        height: 20px;
+                    }
+    /* FIN | FOOTER */
+
+    /***********************************************************
+                    Fil d'ariane - Partie Gauche
+     ***********************************************************/
+
+.ariane {
+    width: 25%;
+    height: 86.5%;
+    float: left;
+    background-image: url("../../images/form/forme5.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: fixed;
+    max-width: 1000px;
+    min-width: 700px;
+}
+
+ol {
+    margin-top: 250px;
+    width: 60%;
+    font-family: "Roboto Medium";
+
+    counter-reset: my-awesome-counter;
+    list-style: none;
+    padding-left: 40px;
+}
+
+@media only screen and (min-width:1537px) {
+
+    li {
+        color: white;
+        font-size: 30px;
+        margin-top: 20px;
+        margin-left: 5%;
+        text-transform: uppercase;
+        opacity: 0.5;
+
+        counter-increment: my-awesome-counter;
+        position: relative;
+    }
+
+    /* Section activée */
+    li[class="active"] {
+        opacity: 1;
+    }
+
+    ol li[class="active"]::before {
+        content: counter(my-awesome-counter);
+        --size: 32px;
+        margin-top: 2px;
+        left: calc(-1 * var(--size) - 10px);
+    }
+
+    ol li::before {
+        content: "";
+        color: #3476C2;
+        font-size: 1.5rem;
+        font-weight: bold;
+        position: absolute;
+
+        left: calc(-1 * var(--size) - 15px);
+        line-height: var(--size);
+        width: var(--size);
+        height: var(--size);
+        margin-top: 8px;
+        background: white;
+        border-radius: 50%;
+        text-align: center;
+    }
+}
+
+
+@media only screen and (max-width:1536px) {
+
+    li {
+        color: white;
+        font-size: 20px;
+        margin-top: 15px;
+        margin-left: 5%;
+        text-transform: uppercase;
+        opacity: 0.5;
+
+        counter-increment: my-awesome-counter;
+        position: relative;
+    }
+
+    /* Section activée */
+    li[class="active"] {
+        opacity: 1;
+    }
+
+    ol li[class="active"]::before {
+        content: counter(my-awesome-counter);
+        --size: 28px;
+        margin-top: -2px;
+        left: calc(-1 * var(--size) - 10px);
+    }
+
+    ol li::before {
+        content: "";
+        color: #3476C2;
+        font-size: 21px;
+        font-weight: bold;
+        position: absolute;
+        --size: 15px;
+        left: calc(-1 * var(--size) - 15px);
+        line-height: var(--size);
+        width: var(--size);
+        height: var(--size);
+        margin-top: 4px;
+        background: white;
+        border-radius: 50%;
+        text-align: center;
+    }
+}
+
+
+    /*******************************
+            RESPONSIVE 1700px
+     *******************************/
+@media (max-width: 1700px) {
+    ol{
+        margin-top: 200px;
+    }
+}
+
+/*******************************
+        RESPONSIVE 1370
+ *******************************/
+@media (max-width: 1370px) {
+
+    /* DÉBUT | Header */
+
+    header{
+        width: 100%;
+        text-align: center;
+    }
+
+    header img{
+        width: 300px;
+        height: 100px;
+        margin-left: 0px;
+    }
+
+    /***********************************************************
+        FORMULAIRE - Questions + Progress Bar - Partie Droite
+     ***********************************************************/
+    .content{
+        width: 100%;
+    }
+
+    .content_progress_bar{
+        padding: 20px 0px;
+    }
+
+    /***********************************************************
+                    Fil d'ariane - Partie Gauche
+     ***********************************************************/
+    .ariane{
+        width:100%;
+        height: auto;
+        background-image: none;
+        position:initial;
+        max-width: initial;
+        min-width: initial;
+    }
+
+    .ariane ol{
+        margin-top: 0px;
+        width: 100%;
+        font-family: "Roboto Medium";
+        padding-left: 0px;
+    }
+
+        .ariane li{ display: none; } /* Cache toutes les autres section */
+
+            /* Section activée */
+            .ariane li[class="active"]{
+                display: inherit;
+                width: 100%;
+                text-align: center;
+                margin-left: 0px;
+                color: #3476C2;
+            }
+
+                /* Cache le numéro devant */
+                li[class="active"]:before{ display: none; }
+
+}
+

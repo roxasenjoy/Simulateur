@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Patrimoines index{% endblock %}
+
+{% block body %}
+    <h1>Patrimoines index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Bail</th>
+                <th>proprioCredit</th>
+                <th>proprioDuree</th>
+                <th>locaLoyer</th>
+                <th>revenuFoyer</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for patrimoine in patrimoines %}
+            <tr>
+                <td>{{ patrimoine.id }}</td>
+                <td>{{ patrimoine.bail }}</td>
+                <td>{{ patrimoine.proprioCredit }}</td>
+                <td>{{ patrimoine.proprioDuree }}</td>
+                <td>{{ patrimoine.locaLoyer }}</td>
+                <td>{{ patrimoine.revenuFoyer }}</td>
+                <td>
+                    <a href="{{ path('patrimoines_show', {'id': patrimoine.id}) }}">show</a>
+                    <a href="{{ path('patrimoines_edit', {'id': patrimoine.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('patrimoines_new') }}">Create new</a>
+{% endblock %}

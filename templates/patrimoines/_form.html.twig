@@ -1,0 +1,170 @@
+{% for message in app.flashes('error') %}
+    <div class="errorsFlash">
+        {{ message }}
+    </div>
+{% endfor %}
+
+{{ form_start(form) }}
+    <!-- 1 -->
+<div class="patrimoine">
+            <div id="patrimoine_famille" style="display: inherit;">
+                <div class="question"> {{ form_label(form.patrimoines.bail) }} </div>
+                {{ form_widget(form.patrimoines.bail) }}
+
+                <div id="patrimoine_proprio" style="display:none;">
+                    <div class="question"> {{ form_label(form.patrimoines.credit_proprio) }} </div>
+                    {{ form_widget(form.patrimoines.credit_proprio) }}
+
+                    <div id="patrimoine_proprioCredit" style="display:none;">
+                        <div class="question">
+                            {{ form_label(form.patrimoines.proprioCredit) }}
+                            <h6> Indiquez le montant mensuel hors assurance</h6>
+                        </div>
+                        {{ form_widget(form.patrimoines.proprioCredit) }}
+                        <div class="question">
+                            {{ form_label(form.patrimoines.proprioDuree) }}
+                            <h6> Indiquez la durée en années</h6>
+                        </div>
+                        {{ form_widget(form.patrimoines.proprioDuree) }}
+                    </div>
+
+                </div>
+
+                <div id="patrimoine_locataire" style="display:none;">
+                    <div class="question">
+                        {{ form_label(form.patrimoines.locaLoyer) }}
+                        <h6> Indiquez le montant mensuel hors charges</h6>
+                    </div>
+                    {{ form_widget(form.patrimoines.locaLoyer) }}
+
+                </div>
+
+            </div>
+
+
+            <div id="patrimoine_investissement" style="display:none;">
+                <div class="question"> {{ form_label(form.patrimoines.proprio_loc) }} </div>
+                {{ form_widget(form.patrimoines.proprio_loc) }}
+
+                <div id="investissement_add" style="display:none;">
+                    {{form_widget(form.patrimoines.investissements) }}
+                </div>
+
+            </div>
+
+            <div id="patrimoine_credit" style="display: none;">
+                <div class="question"> {{ form_label(form.patrimoines.has_credits) }} </div>
+                {{ form_widget(form.patrimoines.has_credits) }}
+                <div id="credit_add" style="display:none;">
+                    {{form_widget(form.patrimoines.credits) }}
+                </div>
+            </div>
+
+
+            <div id="patrimoine_revenu_mensuel" style="display: none;">
+                <div class="question">
+                    {{ form_label(form.patrimoines.revenuFoyer) }}
+                    <h6> Indiquez le montant ANNUEL APRES ABATEMENT</h6>
+
+                </div>
+                {{ form_widget(form.patrimoines.revenuFoyer) }}
+            </div>
+
+
+        <!-- Bouton suivant -->
+        <div id="step"> <!-- Permet de valider le formulaire -->
+            <a class="previous" id="previousSituation" style="text-decoration: none; display: initial;" href="{{ path('situations_new') }}"><i class='fas fa-arrow-left'></i> Situation</a> <!-- Retour sur la page situation -->
+            <a class="previous" id="previous" onclick="back()" style="display:none;">Retour</a>
+            <a class="next" onclick="steps()">Suivant</a>
+        </div>
+
+        <!-- Bouton suivant -->
+        <div id="button" style="display: none;"> <!-- Permet de valider le formulaire -->
+             <button class="next">{{ button_label|default('Epargne') }} <i class='fas fa-arrow-right'></i></button>
+        </div>
+
+    </div>
+{{ form_end(form) }}
+
+
+<script>
+
+    /* Remise à niveau de la progression */
+    document.getElementById("progress").style.width = "24.99%";
+
+    $('.add_investissement').click(function(){
+        // Je récupère le numéro des futurs champs que je vais créer
+        const index = +$('#widgets-counter-investissements').val();
+
+        //Je récupère le prototype des entrées
+        const tmpl = $('#patrimoines_investissements').data('prototype').replace(/__name__/g,index);
+
+        //J'injecte ce code au sein de la div
+        $('#patrimoines_investissements').append(tmpl);
+
+        // On rajoute 1 pour chaque investissement rajouter.
+        $('#widgets-counter-investissements').val(index + 1 );
+
+        // Je gère le bouton supprimer
+        handleDeleteButtonsInvestissements();
+    });
+
+
+    function handleDeleteButtonsInvestissements(){
+        $('button[data-action="deleteInvestissements"]').click(function(){
+            const target = this.dataset.target;
+            $(target).remove();
+        })
+    }
+
+    function updateCounterInvestissements(){
+        const count = +$('#patrimoines_investissements div.investissements').length;
+
+        $('#widgets-counter-investissements').val(count);
+    }
+
+    updateCounterInvestissements();
+    handleDeleteButtonsInvestissements();
+
+
+    /******************************************************************************************/
+    $('.add_credits').click(function () {
+    // Je récupère le numéro des futurs champs que je vais créer
+    const index = +$('#widgets-counter-credits').val();
+
+    //Je récupère le prototype des entrées
+    const tmpl = $('#patrimoines_credits').data('prototype').replace(/__name__/g, index);
+
+    //J'injecte ce code au sein de la div
+    $('#patrimoines_credits').append(tmpl);
+
+    // On rajoute 1 pour chaque investissement rajouter.
+    $('#widgets-counter-credits').val(index + 1);
+
+    // Je gère le bouton supprimer
+    handleDeleteButtonsCredits();
+    });
+
+    function handleDeleteButtonsCredits(){
+        $('button[data-action="deleteCredits"]').click(function(){
+            const target = this.dataset.target;
+            $(target).remove();
+        })
+    }
+
+    function updateCounterCredits(){
+        const count = +$('#patrimoines_credits div.credits').length;
+
+        $('#widgets-counter-credits').val(count);
+    }
+
+    updateCounterCredits();
+    handleDeleteButtonsCredits();
+
+</script>
+
+
+
+
+
+

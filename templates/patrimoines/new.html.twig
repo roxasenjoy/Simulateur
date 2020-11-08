@@ -1,0 +1,125 @@
+{% extends 'simulation/simulation.html.twig' %}
+
+{% form_theme form _self %} {# Action -> Fait fonctionner les nouveaux templates (En dessous) #}
+
+{% block Patrimoine %}<li class="active">Patrimoine</li> {% endblock %}
+
+{% block body %}
+    <div class="content-form">    <!-- Contient le formulaire en général -->
+        {{ include('patrimoines/_form.html.twig') }}
+    </div>
+{% endblock %}
+
+{##############################################
+        Sous formulaire - INVESTISSEMENTS
+###############################################}
+{# Modification -> WIDGET | Action -> Ajoute du texte + Ajoute le bouton pour ajouter des formulaires #}
+{% block _patrimoines_investissements_widget %}
+    <!-- Précision de l'utiliter de ce formulaire + bouton pour ajouter des champs -->
+    <input type="hidden" id="widgets-counter-investissements" value="0"> <!-- Counteur des champs dans le sous formulaire Investissements -->
+    <div class="title_investissement">
+        <strong>Liste de vos investissements</strong>
+        <div>
+            <label class="add_investissement"> <i class="fas fa-plus-circle"></i> Ajouter un nouvel investissement</label>
+        </div>
+    </div>
+
+    {{ form_widget(form) }}
+{% endblock %}
+
+{# Modification -> ROW |  Action -> Design plus propre concernant le sous formulaire #}
+{% block _patrimoines_investissements_entry_row %}
+    {{form_widget(form)}}
+{% endblock %}
+
+{#Modification -> Entrée du widget |  Action -> Ajout du bouton "Supprimer", suppression en DB et front #}
+{% block _patrimoines_investissements_entry_widget %}
+    <div class="investissements" id="block_{{id}}">
+        <div class="add_content">
+            <div>{{ form_label (form.investMontant) }}</div>
+            <div>{{ form_widget (form.investMontant) }}</div>
+        </div>
+        <div class="add_content">
+            <div>{{ form_label (form.investDuree) }}</div>
+            <div>{{ form_widget (form.investDuree) }}</div>
+        </div>
+        <div class="add_content">
+            <div>{{ form_label (form.investRente) }}</div>
+            <div>{{ form_widget (form.investRente) }}</div>
+        </div>
+        <div class="add_content">
+            <div>{{ form_label (form.investAchat) }}</div>
+            <div>{{ form_widget (form.investAchat) }}</div>
+        </div>
+        <div class="add_content">
+            <button type="button"
+                    data-action="deleteInvestissements"
+                    data-target="#block_{{ id }}">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+  </div>
+
+
+{% endblock %}
+
+
+{##############################################
+        Sous formulaire - CRÉDITS
+###############################################}
+
+{# Modification -> WIDGET | Action -> Ajoute du texte + Ajoute le bouton pour ajouter des formulaires #}
+{% block _patrimoines_credits_widget %}
+    <!-- Précision de l'utiliter de ce formulaire + bouton pour ajouter des champs -->
+    <input type="hidden" id="widgets-counter-credits" value="0"> <!-- Counteur des champs dans le sous formulaire Credits -->
+    <div class="title_credit">
+        <strong>Liste de vos crédits</strong>
+        <div>
+            <label class="add_credits"><i class="fas fa-plus-circle"></i> Ajouter un nouveau crédit</label>
+        </div>
+    </div>
+
+
+    {{ form_widget(form) }}
+{% endblock %}
+
+{# Modification -> ROW |  Action -> Design plus propre concernant le sous formulaire #}
+{% block _patrimoines_credits_entry_row %}
+    {{form_widget(form)}}
+{% endblock %}
+
+{#Modification -> Entrée du widget |  Action -> Ajout du bouton "Supprimer", suppression en DB et front #}
+{% block _patrimoines_credits_entry_widget %}
+    <div class="credits" id="block_{{id}}">
+
+        <div class="add_content">
+            <div>{{ form_label (form.creditMontant) }}</div>
+            <div>{{ form_widget (form.creditMontant) }}</div>
+        </div>
+        <div class="add_content">
+            <div>{{ form_label (form.creditDuree) }}</div>
+            <div>{{ form_widget (form.creditDuree) }}</div>
+        </div>
+        <button
+                type="button"
+                data-action="deleteCredits"
+                data-target="#block_{{ id }}">
+                <i class="fas fa-times"></i>
+        </button>
+    </div>
+{% endblock %}
+
+{##############################################
+        PARTIE JAVASCRIPT + ERREURS
+###############################################}
+
+{# Fichier JS qui permettent les animations #}
+{% block js %}
+    <script src="{{ asset('javascript/form/patrimoines/step.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{% endblock %}
+
+{# Gestion de l'affichage des erreurs #}
+{% block form_errors %}
+    {{ include('form/errors.html.twig') }}
+{% endblock %}

@@ -1,0 +1,169 @@
+
+    /************ GENERAL *************/
+
+    @font-face {
+        font-family: "Roboto Bold";
+        src: url("../../../fonts/roboto/Roboto-Bold.ttf");
+    }
+
+    :root{
+        --main-color: #3476C2;
+    }
+
+
+
+    /* Content de la vérification */
+    .all_content{
+        width: 50% ;
+        margin: 10vh auto 0 auto;
+    }
+    /* Logo */
+    header {
+        border-bottom: initial;
+        margin-bottom: 100px;
+    }
+
+    header img{
+        width: 550px;
+        height: 110px;
+        margin-top: 10px;
+    }
+
+    /* Rectangle qui contient tous les éléments */
+    .content{
+        width: 100%;
+        float: initial;
+        border: var(--main-color) .5px solid;
+        border-radius: 5px;
+        box-shadow: 5px 5px 20px rgba(158, 161, 164, 0.5);
+        padding: 50px;
+    }
+
+    /* Title */
+
+    .content .title{
+        font-family: "Roboto Medium", "Roboto Light", sans-serif;
+        color: var(--main-color);
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .content .texte{
+        color: var(--main-color) ;
+        text-align: justify;
+        text-justify: inter-word;
+        font-size: 18px;
+    }
+
+    /* Phrase de présentation*/
+    .verification_presentation{
+        color: var(--main-color);
+        font-size: 20px;
+        font-family: "Roboto Light", "Roboto Light", sans-serif;
+        font-weight: bold;
+        margin-top: 50px;
+    }
+
+    /* Formulaire complet */
+    form[class="verification_form"]{
+        margin-bottom: 50px;
+    }
+
+    /* L'input où rentrer le code */
+    form .verification_code input{
+        width: 90%;
+        padding: 10px;
+        border: var(--main-color) solid 2px;
+        float: left;
+        color: var(--main-color);
+        font-size: 16px;
+        font-weight: bold;
+
+    }
+
+    /* Valider le code */
+    form .verification_submit  button{
+        background: var(--main-color) ;
+        border: var(--main-color) solid 2px;
+        float: right;
+        width: 9.5%;
+    }
+
+    /* Icone à l'intérieur du button */
+    form .verification_submit button i{
+        font-size: 25px;
+        color: white;
+        padding: 9px;
+        text-align: center;
+    }
+
+
+    @media (max-width: 1050px) {
+
+
+        .all_content{
+            width: 85%;
+            margin: 5vh auto 0 auto;
+        }
+
+        /* Logo */
+        header {
+            border-bottom: initial;
+            margin-bottom: 50px;
+        }
+
+        header img{
+            width: 300px;
+            height: 100px;
+        }
+
+        /* Title */
+
+        .content .title{
+            font-family: "Roboto Medium", "Roboto Light", sans-serif;
+            color: var(--main-color);
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 25px;
+        }
+
+        .content .texte{
+            color: var(--main-color) ;
+            text-align: justify;
+            text-justify: inter-word;
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .all_content{
+            width: 95%;
+            margin: 0 auto 0 auto;
+        }
+
+        /* Rectangle qui contient tous les éléments */
+        .content{
+            border: var(--main-color) .5px solid;
+            border-radius: 5px;
+            box-shadow: 5px 5px 20px rgba(158, 161, 164, 0.5);
+            padding: 25px 25px 50px 25px;
+        }
+
+        header{
+            margin-bottom: 10px;
+        }
+
+        /* L'input où rentrer le code */
+        form .verification_code input{
+            width: 80%;
+            float: left;
+        }
+
+        /* Valider le code */
+        form .verification_submit  button{
+            float: right;
+            width: 20%;
+            padding-bottom: 1px;
+        }
+    }
+

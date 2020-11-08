@@ -1,0 +1,18 @@
+{% extends 'simulation/simulation.html.twig' %}
+
+{% block Epargne %}<li class="active">Épargne</li> {% endblock %}
+
+{% block body %}
+    <!-- Titre du formulaire -->
+    <div class="content-form">
+        {{ include('epargnes/_form.html.twig') }}
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script src="{{ asset('javascript/form/epargnes/step.js') }}"></script>
+{% endblock %}
+
+{% block form_errors %}
+    {{ include('form/errors.html.twig') }}
+{% endblock %}

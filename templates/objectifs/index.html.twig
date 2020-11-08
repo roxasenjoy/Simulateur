@@ -1,0 +1,39 @@
+{% extends 'simulation/simulation.html.twig' %}
+
+{% block title %}Objectifs index{% endblock %}
+
+{% block body %}
+    <h1>Objectifs index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>object1</th>
+                <th>object2</th>
+                <th>object3</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for objectif in objectifs %}
+            <tr>
+                <td>{{ objectif.id }}</td>
+                <td>{{ objectif.object1 }}</td>
+                <td>{{ objectif.object2 }}</td>
+                <td>{{ objectif.object3 }}</td>
+                <td>
+                    <a href="{{ path('objectifs_show', {'id': objectif.id}) }}">show</a>
+                    <a href="{{ path('objectifs_edit', {'id': objectif.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('objectifs_new') }}">Create new</a>
+{% endblock %}

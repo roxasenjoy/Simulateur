@@ -1,0 +1,71 @@
+#button, #step{
+    text-align: right;
+    margin-top: 100px;
+    margin-bottom: 5%;
+    cursor:pointer;
+}
+
+#button{
+    display: none;
+}
+
+    .next, .previous{
+        background: #3476C2;
+        cursor:pointer;
+        padding: 10px 30px;
+        font-size: 25px;
+        font-family: "Roboto Medium", sans-serif;
+        color: white;
+        border-radius: 50px;
+        margin-right: 10%;
+
+        border: #3476C2 1px solid;
+    }
+
+    .next i, .previous i{
+        font-size: 24px;
+    }
+
+    .previous{
+        margin-right: 0%;
+    }
+
+    .epargnePrevious, .resultatNext{
+        font-size: 24px;
+    }
+
+/*******************************
+    RESPONSIVE 1650px
+*******************************/
+@media (max-width: 1370px) {
+    #button, #step{
+        text-align: center;
+        margin-top: 5%;
+    }
+    .next{
+        margin: 0 auto 20px auto;
+    }
+
+}
+
+/*******************************
+    RESPONSIVE 800px
+*******************************/
+@media (max-width: 800px){
+    .resultatNext{
+        font-size: 16px;
+    }
+
+    #previousPatrimoine{
+        font-size: 16px;
+    }
+
+    .next, .previous{
+        font-size: 16px;
+    }
+
+    .next i, .previous i{
+        font-size: 16px !important;
+    }
+
+}

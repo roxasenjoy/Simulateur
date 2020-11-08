@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="531.001" height="1149.994" viewBox="0 0 531.001 1149.994">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-0.106" y1="0.864" x2="0.744" y2="0.274" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#3275c2"/>
+      <stop offset="1" stop-color="#9dc5f2"/>
+    </linearGradient>
+  </defs>
+  <g id="forme4" transform="translate(699.103 74.72)">
+    <g id="Groupe_963" data-name="Groupe 963">
+      <path id="Tracé_4460" data-name="Tracé 4460" d="M-184.024,919.723c-150.864-82.318-355.883-74.835-127.654-449.01C-136.965,184.277-513.1-2.756-699.1-74.72V1075.274C-428.825,1034.385-90.4,970.809-184.024,919.723Z" fill="#9ec5f2" opacity="0.51" style="isolation: isolate"/>
+    </g>
+    <path id="Tracé_4461" data-name="Tracé 4461" d="M-206.024,911.186C-356.888,829.311-561.907,836.754-333.678,464.6-165.607,190.533-507.294,7.966-699.1-69.239v1131.8C-432.89,1021.828-114.922,960.627-206.024,911.186Z" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

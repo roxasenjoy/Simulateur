@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Patrimoines{% endblock %}
+
+{% block body %}
+    <h1>Edit Patrimoines</h1>
+
+    {{ include('patrimoines/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('patrimoines_index') }}">back to list</a>
+
+    {{ include('patrimoines/_delete_form.html.twig') }}
+{% endblock %}

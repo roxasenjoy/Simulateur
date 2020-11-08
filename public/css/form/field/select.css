@@ -1,0 +1,20 @@
+select{
+    padding: 10px 20px;
+    border: #3476C2 solid 1px;
+    color: #3476C2;
+    font-size: 24px;
+    border-radius: 12.5px;
+    font-family: "Roboto Light", "Roboto",sans-serif;
+}
+
+@media(max-width: 800px) {
+    select{
+        padding: 10px 20px;
+        border: #3476C2 solid 1px;
+        color: #3476C2;
+        width: 95%;
+        font-size: 24px;
+        border-radius: 12.5px;
+        font-family: "Roboto Light", "Roboto",sans-serif;
+    }
+}

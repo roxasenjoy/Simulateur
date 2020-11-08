@@ -1,0 +1,28 @@
+{% for message in app.flashes('error') %}
+    <div class="errorsFlash">
+        {{ message }}
+    </div>
+{% endfor %}
+
+{{ form_start(form) }}
+<div class="objectifs" id="header-container">
+    <div class="question">{{ form_label(form.objectifs.object1) }}</div>
+    {{ form_widget(form.objectifs.object1) }}
+    <div class="question">{{ form_label(form.objectifs.object2) }}</div>
+    {{ form_widget(form.objectifs.object2) }}
+    <div class="question">{{ form_label(form.objectifs.object3) }}</div>
+    {{ form_widget(form.objectifs.object3) }}
+
+    <!-- Bouton suivant -->
+    <div id="step"> <!-- Permet de valider le formulaire -->
+        <a class="previous epargnePrevious" id="previousPatrimoine" style="text-decoration: none; display: initial;" href="{{ path('epargnes_new') }}"><i class='fas fa-arrow-left'></i> Épargne</a> <!-- Retour sur la page situation -->
+        <button class="next resultatNext">{{ button_label|default('Résultat') }} <i class='fas fa-arrow-right'></i></button>
+    </div>
+
+</div>
+
+{{ form_end(form) }}
+
+<script>
+    document.getElementById("progress").style.width = "95%";
+</script>

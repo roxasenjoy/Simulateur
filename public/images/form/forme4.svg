@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="448.342" height="963.208" viewBox="0 0 448.342 963.208">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-0.034" y1="0.884" x2="0.79" y2="0.291" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#3275c2"/>
+      <stop offset="1" stop-color="#9dc5f2"/>
+    </linearGradient>
+  </defs>
+  <g id="forme5" transform="translate(1091 86.51)">
+    <g id="Groupe_961" data-name="Groupe 961">
+      <path id="Tracé_4458" data-name="Tracé 4458" d="M-642.658,876.7c-133.975-56.771-256.451-97.2-60.917-417.776C-528.863,172.487-905-14.546-1091-86.51V876.7Z" fill="#9ec5f2" opacity="0.51" style="isolation: isolate"/>
+    </g>
+    <g id="Groupe_962" data-name="Groupe 962">
+      <path id="Tracé_4459" data-name="Tracé 4459" d="M-645.106,876.7C-786,815.11-930.6,787.123-725.575,452.8-557.505,178.743-899.191-3.824-1091-81.029V876.7Z" fill="url(#linear-gradient)"/>
+    </g>
+  </g>
+</svg>

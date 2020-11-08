@@ -1,0 +1,74 @@
+
+{% for message in app.flashes('error') %}
+    <div class="errorsFlash">
+        {{ message }}
+    </div>
+{% endfor %}
+
+{{ form_start(form) }}
+
+    <div class="situations">
+        <div id="situations_famille">
+            <!-- Situation Familiale (Page 1) -->
+            <div class="question">
+                {{ form_label(form.situations.famille) }}
+            </div>
+            {{ form_widget(form.situations.famille) }}
+        </div>
+
+        <div id="situations_naissance" style="display: none;">
+            <!-- Date de naissance (Page 2) -->
+            <div class="question">
+                {{ form_label(form.situations.naissance) }}
+            </div>
+            {{ form_widget(form.situations.naissance) }}
+            {{ form_errors(form.situations.naissance) }}
+        </div>
+
+        <div id="situations_has_enfant" style="display: none;">
+            <!-- Enfants ?  (Page 3) -->
+            <div class="question">
+                {{ form_label(form.situations.has_enfant) }}
+            </div>
+            {{ form_widget(form.situations.has_enfant) }}
+
+
+            <div class="situations_enfant" id="enfant" style="display: none">
+                <!-- Nombres d'enfants (Page 3) -->
+                <div class="question">{{ form_label(form.situations.enfant) }}</div>
+                {{ form_widget(form.situations.enfant) }}
+                {{ form_errors(form.situations.enfant) }}
+            </div>
+        </div>
+
+        <div id="situations_enfantFiscal" style="display: none;">
+            <div class="question">{{ form_label(form.situations.enfantFiscal) }}</div>
+            {{ form_widget(form.situations.enfantFiscal) }}
+            {{ form_errors(form.situations.enfantFiscal) }}
+        </div>
+
+        <div id="situations_has_pension" style="display: none;">
+            <!-- Pension ? (Page 4) -->
+            <div class="question">{{ form_label(form.situations.has_pension) }}</div>
+            {{ form_widget(form.situations.has_pension) }}
+
+            <div class="situations_pension" id="pension" style="display: none">
+                <!-- Prix de la pension (Page 4) -->
+                <div class="question">{{ form_label(form.situations.pension) }}</div>
+                {{ form_widget(form.situations.pension) }}
+                {{ form_errors(form.situations.pension) }}
+            </div>
+        </div>
+    </div>
+
+    <div id="step"> <!-- Permet de valider le formulaire -->
+        <a class="previous" id="previous" onclick="back()" style="display:none;">Retour</a>
+        <a class="next" onclick="steps()">Suivant</a>
+    </div>
+
+
+    <!-- Bouton suivant -->
+    <div id="button" style="display: none;"> <!-- Permet de valider le formulaire -->
+        <button class="next">{{ button_label|default('Patrimoine') }} <i class='fas fa-arrow-right'></i></button>
+    </div>
+{{ form_end(form) }}

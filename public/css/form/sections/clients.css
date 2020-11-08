@@ -1,0 +1,191 @@
+
+
+/* Séparation des deux blocs (right, left) */
+.clearfix{
+    clear: both;
+}
+
+/* Left */
+    .left{
+        float: left;
+        width: 30%;
+        margin-top: 50px;
+        text-align: center;
+
+    }
+
+    .left img{
+        width: 450px;
+        height: 550px;
+        margin-left: 35%;
+    }
+
+/* Right */
+    .right{
+        float: right;
+        width: 60%;
+        margin-top: 50px;
+    }
+
+    /* Titre + Description */
+    .resultat{
+        margin: auto;
+        text-align: center;
+        color: #3476C2;
+        font-size: 25px;
+    }
+
+    .resultat p{
+        color: #3476C2 !important;
+        font-family: "Roboto Light";
+    }
+
+    .resultat .verification{
+        color: #3476C2;
+        text-align: left;
+        font-family: "Roboto Medium";
+    }
+
+
+    /* Formulaire */
+    .field div{
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+    }
+
+    .field [type="text"], .field [type="email"], .field [type="number"]{
+        border: white solid 1px;
+        border-bottom: #3476C2 solid 1px;
+        width: 75%;
+        padding: 10px 20px;
+        font-size: 25px;
+        font-family: "Roboto Light", sans-serif;
+        color: #3476C2;
+        margin-bottom: 10px;
+
+    }
+
+    .field [type="text"]::placeholder, .field [type="email"]::placeholder, .field [type="number"]::placeholder{
+        color: #3476C2;
+        opacity: 0.5;
+    }
+
+    .field [type="checkbox"]:checked, .field [type="checkbox"]:not(:checked){
+        position:initial;
+        width: initial;
+        height: initial;
+        visibility: initial;
+    }
+
+    .field label[for="condGenerales"]{
+        color: #3476C2;
+        font-size: 14px;
+    }
+
+    .field  #condGenerales{
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+    }
+
+    .field label{
+        color: #3476C2 !important;
+        font-size: 24px !important;
+        position: initial !important;
+        display: initial!important;
+        padding: initial!important;
+        margin: initial!important;
+        width: initial!important;
+        height:initial!important;
+        line-height: initial!important;
+        letter-spacing: initial!important;
+        text-align: initial!important;
+        overflow: initial!important;
+        cursor: initial!important;
+        font-family: initial!important;
+        border: initial!important;
+        transform: initial !important;
+        box-shadow: initial !important;
+    }
+
+    [type="checkbox"]:checked + label{
+        background-color: initial !important;
+        color: white;
+    }
+
+
+
+    .telephone{
+        width:1000px;
+    }
+
+    .condition{
+        margin-bottom: 25px;
+    }
+
+    #condGenerales{
+        text-align: left;
+    }
+
+    .form .image img{
+        width: 180px;
+        height: 120px;
+    }
+
+    .form .image{
+        text-align: center;
+    }
+
+    .btn{
+        text-align: center;
+    }
+
+    button{
+        margin-bottom: 50px;
+        margin-top: 20px;
+        text-align: center;
+        background-color: #3476C2;
+        border: none;
+        color: white;
+        border-radius: 30px;
+        padding: 15px 32px;
+        font-family: "Roboto Medium", sans-serif;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+
+
+@media (max-width: 1370px) {
+
+    .left{
+        display: none;
+    }
+
+    .right{
+        width: 100%;
+    }
+
+    .field div{
+        width: 100%;
+    }
+
+
+
+}
+
+
+@media (max-width: 800px){
+    .condition{
+        margin-bottom: 0px;
+    }
+
+    .field label[for="condGenerales"]{
+        color: #3476C2;
+        font-size: 16px !important;
+
+    }
+}

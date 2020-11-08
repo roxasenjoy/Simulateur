@@ -1,0 +1,448 @@
+{% extends 'simulation/simulation.html.twig' %}
+
+{% block form_css %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/form/sections/resultat.css') }}">
+{% endblock %}
+
+{% block js %}
+    <script src="{{ asset('javascript/form/resultat/show_details.js') }}"></script>
+{% endblock %}
+
+{% block ariane %}{% endblock %}
+
+{% block body %}
+
+    <!-- Votre situation -->
+    <section class="situation">
+        <div class="situation_title title">
+            <h1>VOTRE SITUATION</h1>
+            <hr class="title_separation">
+        </div>
+
+        <div>
+            <ol>
+                <li class="liste">
+                    <p><i></i>Revenu Annuel</p>
+                    <p> {{ calculator.getRevenuAnnuel}} €</p> <!-- Fait -->
+                </li>
+                <li class="liste">
+                    <p><i></i>Charges ANNUELLES</p>
+                    <p> {{ calculator.getChargesAnnuels}} €</p> <!-- Fait -->
+                </li>
+                <li class="liste">
+                    <p><i></i>Estimation de vos impôts</p>
+                    <p> {{ calculator.getEstimationImpots }} €</p> <!-- Fait -->
+                </li>
+                <li class="liste">
+                    <p><i></i>Votre TMI</p>
+                    <p> {{ calculator.tmi}} %</p> <!-- Fait -->
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Résultat -->
+    <section class="resultats">
+        <div class="title">
+            <h1 >RÉSULTATS</h1>
+            <hr class="title_separation">
+        </div>
+
+        <div class="content">
+            <p>
+                Nous avons détecté <strong> {{ calculator.getSolutionsInvestissements }}</strong> solutions d'investissements
+                en immobilier qui corresponds à votre profil et à vos objectifs !
+            </p>
+            <p>
+                Afin d'approfondir cette étude et répondre à toute vos questions,
+                un conseiller spécialisés en Gestion de Patrimoine prendra contact
+                avec vous prochainement gratuitement et sans engagement.
+            </p>
+        </div>
+
+        <div>&nbsp</div> <!-- Permet de m'éviter des problèmes inconnus -->
+
+        <!--------------------
+        ----------------------
+        -----    PINEL  ------
+        ----------------------
+        ---------------------->
+
+        <div class="pinel">
+            <div class="content">
+                <div class="type">
+                    <p class="title  ">IMMOBILIER NEUF PINEL</p>
+                    <p class="value">{# calculator.bestScore #} </p>
+                </div>
+
+                <div class="score">
+                    <p class="title">SCORE</p>
+                    <p class="value"> 91 %</p>
+                </div>
+
+                <div class="budget_ideal">
+                    <p class="title">BUDGET IDEAL D'INVESTISSEMENT</p>
+                    <p class="value"> {{  calculator.budgetPinel }}  €</p>
+                </div>
+            </div>
+
+            <div class="detailsContent">
+                <label class="details" onclick="detailsPinel()"> Voir plus de détails <i class="fas fa-chevron-down"></i> </label>
+            </div>
+
+            <div class="dropdown" id="dropdownPinel" style="display: none">
+                <div class="description">
+                    <p>La loi Pinel vous permet d'investir dans un appartement neuf tout en profitant d'une forte réduction d'impôt.
+                        Ce dispositif est soumis à certains critères. Veuillez nous contacter pour avoir plus de renseignements.</p>
+                </div>
+
+                <!-- LES CHIFFRES CLES-->
+                <div class="section_title">
+                    <h1>LES CHIFFRES CLÉS</h1>
+                </div>
+
+                <div>
+                    <ol>
+                      <!--  <li class="listeSection">
+                            <p> <i class="fas fa-check"></i> Economie d'impôts </p>
+                            <p> {{ calculator.getEconomieImpotMoyenne}} €</p>
+                        </li>
+                        <li class="listeSection">
+                            {% if (calculator.getApport > 0) %}
+                                <p class="superieur"> <i class="fas fa-check"></i>Apport</p>
+                                <p class="superieur"> {{ calculator.getApport }} €</p>
+                            {% elseif (calculator.getApport < 0) %}
+                                <p class="inferieur"> <i class="fas fa-check"></i>Apport</p>
+                                <p class="inferieur"> {{ calculator.getApport }} €</p>
+                            {% else %}
+                                <p> <i class="fas fa-check"></i> Apport</p>
+                                <p> {{ calculator.getApport }} €</p>
+                            {% endif %}
+                        </li>
+
+                        <li class="listeSection">
+                            <p> <i class="fas fa-check"></i> Épargne mensuelle</p>
+                            <p> {{ calculator.getEffortEpargneMensuel }} €</p>
+                        </li>
+                        <li class="listeSection">
+                            {% if (calculator.getRendementNetPINEL >= 0) %}
+                                <p class="superieur"> <i class="fas fa-times"></i> Rendement net</p>
+                                <p class="superieur"> {{ calculator.getRendementNetPINEL }} %</p>
+                            {% else %}
+                                <p class="inferieur"><i class="fas fa-times"></i> Rendement net</p>
+                                <p class="inferieur"> {{ calculator.getRendementNetPINEL }} %</p>
+                            {% endif %}
+                        </li>-->
+                        <li class="listeSection">
+                            <p> <i></i>Réduction d'impôt sur 6 ans </p>
+                            <p> {{ calculator.getDureePlacementSixAns}} €</p>
+                        </li>
+
+                        <li class="listeSection">
+                            <p> <i></i>Réduction d'impôt sur 9 ans</p>
+                            <p> {{ calculator.getDureePlacementNeufAns}} €</p>
+                        </li>
+
+                        <li class="listeSection">
+                            <p> <i></i>Réduction d'impôt sur 12 ans</p>
+                            <p> {{ calculator.getDureePlacementDouzeAns}} €</p>
+                        </li>
+                    </ol>
+                </div>
+
+                <!-- VOS FLUX DE TRÉSORIE
+                <div class="section_title">
+                    <h1>VOS FLUX DE TRÉSORIE</h1>
+                </div>
+
+                <div>
+                    <ol>
+                        <li class="listeSection">
+                            {% if (calculator.getCreditImmobilier > 0) %}
+                                <p class="superieur"> <i class="fas fa-check"></i>Crédit immobilier</p>
+                                <p class="superieur"> {{ calculator.getCreditImmobilier }} €</p>
+                            {% else %}
+                                <p class="inferieur"> <i class="fas fa-check"></i>Crédit immobilier</p>
+                                <p class="inferieur">- {{ calculator.getCreditImmobilier }} €</p>
+                            {% endif %}
+                        </li>
+                        <li class="listeSection">
+                            {% if (calculator.getLoyerPercu > 0) %}
+                                <p class="superieur"> <i class="fas fa-check"></i>Loyer perçu</p>
+                                <p class="superieur"> {{ calculator.getLoyerPercu }} €</p>
+                            {% else %}
+                                <p class="inferieur"> <i class="fas fa-check"></i>Loyer perçu</p>
+                                <p class="inferieur">- {{ calculator.getLoyerPercu }} €</p>
+                            {% endif %}
+                        </li>
+                        <li class="listeSection">
+                            {% if (calculator.getChargesAnnuels > 0) %}
+                                <p class="inferieur"> <i class="fas fa-check"></i>Charges </p>
+                                <p class="inferieur">{{ calculator.chargesAnnuels}} €</p>
+                            {% else %}
+                                <p class="superieur"> <i class="fas fa-check"></i>Charges </p>
+                                <p class="superieur">{{ calculator.chargesAnnuels}} €</p>
+                            {% endif %}
+                        </li>
+                        <li class="listeSection">
+                            <p><i class="fas fa-check"></i>Réduction d'impôt mensuelle</p>
+                            <p> {{ calculator.getReductionImpotMoyenne}} €</p>
+                        </li>
+                        <li class="listeSection">
+                            <p> <i class="fas fa-check"></i> Épargne mensuelle</p>
+                            <p> {{ calculator.getEffortEpargneMensuel }} €</p>
+                        </li>
+
+                        <li class="precision"> <p> *Les calculs effectués sont hors taxes foncières. </p></li>
+
+                        <li class="financement">
+                            <p> En épargnant tous les mois {{ calculator.getEffortEpargneMensuel }} € sur un compte dédié à votre opération
+                                vous financez l'acquisition d'un bien d'une valeur de 300 000 € </p>
+
+
+
+                    </ol>
+                </div>    </li>-->
+            </div> <!-- Dropdown -->
+        </div>
+
+        <!--------------------
+       ----------------------
+       -----    LMNP  -------
+       ----------------------
+       ---------------------->
+
+        {% if(calculator.getSolutionsInvestissements >= 100000) %}
+
+            <div class="LMNP">
+                <div class="content">
+                    <div class="type">
+                        <p class="title bug1">LMP</p>
+                    </div>
+
+                    <div class="score">
+                        <p class="title ">SCORE</p>
+                        <p class="value ">90 %</p>
+                    </div>
+
+                    <div class="budget_ideal">
+                        <p class="title">BUDGET IDEAL D'INVESTISSEMENT</p>
+                        <p class="value"> {{ calculator.getBudgetIdealInvestissementLMP() }} €</p>
+                    </div>
+                </div>
+
+                <div class="detailsContent">
+                    <label class="details detail-btn" id="detailsLMNP" onclick="detailsLMNP()"> Voir plus de détails <i class="fas fa-chevron-down"></i> </label>
+                </div>
+
+                <div class="dropdown" id="dropdownLMNP" style="display: none">
+                    <div class="description">
+                        <p>L'investissement LMP vous permet d'investir dans un appartement,
+                            dans une résidence de services (résidence étudiante, de tourisme,
+                            de sénior ou d'EPHAD). Vous profitez d'une fiscalité avantageuse et
+                            des garanties de location grâce au bail commercial signé avec l'exploitant de la résidence.
+                            Veuillez nous contactez pour avoir plus de renseignement.
+
+                            <span class="italique"><!-- A mettre en italique -->
+                                <br> Hypothèse financement sur 20 ans aux taux d'interet de 1.5% HA (Hors assurance).
+                            </span>
+                        </p>
+                    </div>
+
+                    <!-- LES CHIFFRES CLES-->
+                    <div class="section_title">
+                        <h1>LES CHIFFRES CLÉS</h1>
+                    </div>
+
+                    <div>
+                        <ol>
+                            <li class="listeSection">
+                                <p> Épargne mensuelle </p>
+                                <p> {{ calculator.getEpargneMensuelleLMP }} €</p>
+                            </li>
+                            <li class="listeSection">
+                                <p> Rentabilité NET <span class="italique"><!-- A mettre en italique --> (Hypothèse de calcul) </span></p>
+                                <p> {{ calculator.getRentabiliteNetLMP }} %</p>
+                            </li>
+                            <li class="listeSection">
+                                <p> Durée conseillée du placement</p>
+                                <p> 20 ans </p>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <!-- VOS FLUX DE TRÉSORIE -->
+                    <div class="section_title">
+                        <h1>VOS FLUX DE TRÉSORIE</h1>
+                    </div>
+
+                    <div>
+                        <ol>
+                            <li class="listeSection">
+                                <p> Capacité d'endetement</p>
+                                <p> {{ calculator.getCapaciteEndetementLMP}} €</p>
+                            </li>
+                            <li class="listeSection">
+                                <p> Loyer perçu </p>
+                                <p> {{ calculator.getLoyerPercuLMP}} €</p>
+                            </li>
+                            <li class="listeSection">
+                                <p> Épargne mensuelle</p>
+                                <p> {{ calculator.getEpargneMensuelleLMP }} €</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div> <!-- Dropdown -->
+
+            </div>
+
+        {% endif %}
+
+        <!--------------------
+       ----------------------
+       --    Demembrement  --
+       ----------------------
+       ---------------------->
+        <div class="demembrement">
+            <div class="content">
+                <div class="type">
+                    <p class="title bug2">DEMEMBREMENT</p>
+                    <p class="value bug2">{# calculator.bestScore #} </p>
+                </div>
+
+                <div class="score">
+                    <p class="title ">SCORE</p>
+                    <p class="value "> {# calculator.scorePinel #} 100 %</p>
+                </div>
+
+                <div class="budget_ideal">
+                    <p class="title">BUDGET IDEAL D'INVESTISSEMENT</p>
+                    <p class="value"> {# calculator.budgetPinel #} 100000 €</p>
+                </div>
+            </div>
+
+            <div class="detailsContent">
+                <label class="details"  onclick="detailsDemembrement()"> Voir plus de détails <i class="fas fa-chevron-down"></i> </label>
+            </div>
+
+            <div class="dropdown" id="dropdownDemembrement" style="display: none">
+                <div class="description">
+                    <p>
+                        <br>Un bien immobilier peut être démembré par convention.
+
+                        <br>Exemple: lors de l'acquisition d'un immeuble neuf en VEFA (Vente en l'Etat Futur d'Achèvement).
+
+                        <br>Le droit de propriété est alors démembré  entre 2 investisseurs distincts.
+
+                        <br>L'un acquiert la nue-propriété moyennant une décote (en contrepartie de l'abandon temporaire des droits revenant à l'usufruitier), et l'autre acquiert ou conserve l'usufruit temporairement.
+
+                        <br>Pour des raisons fiscales, le nu-propriétaire est le plus souvent un particulier (investisseur personne physique ou SCI transparente fiscalement, soumise à l'IR), et l'usufruitier une personne morale (société foncière, société soumise à l'IS, ou un bailleur social). Dans ce cas, le démembrement de propriété est fixé contractuellement entre les 2 parties pour une durée limitée dans le temps : 5, 10, 15 ou 20 ans par exemple.
+
+                        <br>Durant la période de démembrement temporaire, les co-contractants peuvent décider de la répartition de certaines charges (taxe foncière, gros travaux) entre le nu-propriétaire et l'usufruitier. Ces règles sont prévues au contrat lors de la mise en place du démembrement.
+
+                        <br>Le contrat prévoit également la date de fin de l'usufruit, et que l'usufruitier aura effectué toutes les démarches pour rendre au propriétaire un bien libre de tout occupant, et remis en état.
+
+                        <br>A l'échéance prévue au contrat, l'usufruitier perd ses prérogatives, et le nu-propriétaire devient pleinement propriétaire du bien acquis en nue-propriété quelques années auparavant. Il peut alors décider d'en disposer librement, en continuant de le louer et en percevant les revenus locatifs, en le cédant ou en l'habitant.
+                    </p>
+                </div>
+
+                <!-- LES CHIFFRES CLES-->
+                <div class="section_title">
+                    <h1>Exemple d'investissement</h1>
+                </div>
+
+                <div>
+                    <ol>
+                        <li class="listeSection">
+                            <p>   Prix du foncier en pleine propriété </p>
+                            <p> 100000 €</p>
+                        </li>
+
+                        <li class="listeSection">
+                            <p>   Usufruit temporaire sur 20 ans</p>
+                            <p> 20 ans</p>
+                        </li>
+
+                        <li class="listeSection">
+                            <p>  Valeur de l'usufruit</p>
+                            <p> 30000 €</p>
+                        </li>
+
+                        <li class="listeSection">
+                            <p>   Valeur de la Nue-Propriété </p>
+                            <p> 70000 €</p>
+                        </li>
+
+                        <li class="listeSection">
+                            <p>   Rentabilité locative initiale/an </p>
+                            <p> 3500 €</p>
+                        </li>
+
+                        <li class="listeSection">
+                            <p>   Revalorisation locative annuelle </p>
+                            <p> 0.5 %</p>
+                        </li>
+
+                        <li class="listeSection">
+                            <p>   Revalorisation annuelle du capital </p>
+                            <p> 1 %</p>
+                        </li>
+
+                    </ol>
+                </div>
+
+                <!-- VOS FLUX DE TRÉSORIE -->
+                <div class="section_title">
+                    <h1>Pour le Nue-Propriété</h1>
+                </div>
+
+                <div>
+                    <ol>
+                        <li class="listeSection">
+                            <p>  Montant emprunté </p>
+                            <p> 70 000 €</p>
+                        </li>
+
+                        <li class="listeSection">
+                            <p>  Durée </p>
+                            <p> 20 ans</p>
+                        </li>
+
+                        <li class="listeSection">
+                            <p>  Taux hors assurance </p>
+                            <p> 1.5 %</p>
+                        </li>
+
+                        <li class="listeSection">
+                            <p>  Mensualité de crédit </p>
+                            <p> 338 €</p>
+                        </li>
+
+                        <li class="listeSection">
+                            <p>  Annualité de crédit </p>
+                            <p> 4056 €</p>
+                        </li>
+
+                        <li class="listeSection">
+                            <p>  Capital à terme (20 ans) </p>
+                            <p> 122000 €</p>
+                        </li>
+
+                        <li class="listeSection">
+                            <p>  Taux de Rendement Interne </p>
+                            <p> 3.85 %</p>
+                        </li>
+
+                        <li class="listeSection">
+                            <p>  Rentabilité à terme (20 ans) </p>
+                            <p>  5.52 % <span class="italique">Rente viagère </span></p>
+                        </li>
+
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
